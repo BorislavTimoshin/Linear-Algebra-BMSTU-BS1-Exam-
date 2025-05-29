@@ -1,0 +1,75 @@
+\section{
+    Прямое дополнение. Ортогональное дополнение.
+}
+
+\subsection{
+    Прямое дополнение.
+}
+
+\begin{definition}
+    Если линейное подпространство $\mathcal{H}_1$ и $\mathcal{H}_2$ в линейном пространстве $\mathcal{L}$ образуют прямую сумму, причем $\mathcal{H}_1 \oplus \mathcal{H}_2 = \mathcal{L}$, то говорят, что $\mathcal{H}_1$ является \textit{\textbf{прямым дополнением}} для $\mathcal{H}_2$.
+\end{definition}
+
+\begin{theorem}
+    Любое линейное подпространство $\mathcal{H}$ в линейном пространстве $\mathcal{L}$ имеет прямое дополнение.
+\end{theorem}
+
+\begin{proof}~
+
+    Если линейное подпространство $\mathcal{H}$  совпадает со всем линейным пространством $\mathcal{L}$, то в качестве его прямого дополнения следует взять другое несобственное подпространство: $\mathcal{H}_1 = \{\vec{0}\}$. Точно так же прямым дополнением к нулевому подпространству $\{\vec{0}\}$ является само линейное пространство $\mathcal{L}$. Опуская эти два тривиальных случая, полагаем, что линейное подпространство $\mathcal{H}_1$ является собственным.
+
+    Выберем $\mathcal{H}$ какой-либо базис $e = (\vec{e_1}, \ldots, \vec{e_k})$ и дополним его системой векторов $f = (\vec{f_1}, \ldots, \vec{f_m})$ до базиса в $\mathcal{L}$. Положим, $\mathcal{H}_1 = span\{f\}$. Тогда $\mathcal{H} + \mathcal{H}_1 = \mathcal{L}$, так как сумма $\mathcal{H} + \mathcal{H}_1$ содержит все векторы системы $(e, f)$, являющейся базисом в $\mathcal{L}$, а значит, и любой другой вектор линейного пространства. Остается доказать, что сумма $\mathcal{H} + \mathcal{H}_1$ является прямой.
+
+    Выберем произвольный вектор $\vec{y} \in \mathcal{H} \cap \mathcal{H}_1$. Тогда, с одной стороны, $\vec{y} = \alpha_1\vec{e_1} + \ldots + \alpha_k\vec{e_k}$, так как $\vec{y}$ принадлежит линейному подпространству $\mathcal{H}$, а с другой стороны, $\vec{y} = \beta_1\vec{f_1} + \ldots + \beta_m\vec{f_m}$, так как $\vec{y}$ принадлежит линейному подпространству $\mathcal{H}_1$. Эти две линейные комбинации есть два разложения вектора в базисе $(e, f)$ линейного пространства $\mathcal{L}$ и, следовательно, должны совпадать:
+    $$\alpha_1\vec{e_1} + \ldots + \alpha_k\vec{e_k} = \beta_1\vec{f_1} + \ldots + \beta_m\vec{f_m},$$
+    или
+    $$\alpha_1\vec{e_1} + \ldots + \alpha_k\vec{e_k} - \beta_1\vec{f_1} - \ldots - \beta_m\vec{f_m} = \vec{0}.$$
+    Система векторов $(e, f)$ линейно независима, так как является базисом. Поэтому из последнего равенства векторов следует, что в нем все коэффициенты нулевые. Значит, вектор $\vec{y}$ является нулевым, а так как он выбирался произвольно, то $\mathcal{H} \cap \mathcal{H}_1 = \{\vec{0}\}$. Поэтому линейные подпространства $\mathcal{H}$ и $\mathcal{H}_1$ образуют прямую сумму.
+\end{proof}
+
+
+\newpage
+
+
+\subsection{
+    Ортогональное дополнение.
+}
+
+\begin{definition}
+    \textit{\textbf{Ортогональным дополнением}} линейного подпространства $\mathcal{H}$ в евклидовом пространстве $\mathcal{E}$ называют множество $\mathcal{H}^\perp$ всех векторов $\vec{x} \in \mathcal{E}$, ортогональных каждому вектору линейного подпространства $\mathcal{H}$.
+\end{definition}
+
+\begin{theorem}
+    Ортогональное дополнение $\mathcal{H}^\perp$ линейного подпространства $\mathcal{H}$ в евклидовом пространстве $\mathcal{E}$ является линейным подпространством в $\mathcal{E}$, причем $\mathcal{E} = \mathcal{H} \oplus \mathcal{H}^\perp$ и $\dim \mathcal{H} + \dim \mathcal{H}^\perp = \dim \mathcal{E}$.
+\end{theorem}
+
+\begin{proof}
+    Чтобы доказать, что $\mathcal{H}^\perp$ является линейным подпространством в $\mathcal{E}$, нужно проверить 2 условия определения линейного подпространства:
+    \begin{enumerate}
+        \item $\forall \vec{x}, \vec{y} \in \mathcal{H}^\perp$ умножим скалярно их сумму на произвольный вектор $\vec{h} \in \mathcal{H}$. Получим:
+        $$(\vec{x} + \vec{y}, \vec{h}) = (\vec{x}, \vec{h}) + (\vec{y}, \vec{h}) = 0 + 0 = 0,$$
+        т.е. $\forall \vec{x}, \vec{y} \in \mathcal{H}^\perp \colon \vec{x} + \vec{y} \in \mathcal{H}^\perp$. 
+        \item Теперь рассмотрим произведение $\vec{x} \in \mathcal{H}^\perp$ на произвольное $\lambda \in \RR$. Для произвольного вектора $\vec{h} \in \mathcal{H}$
+        $$(\lambda \vec{x}, \vec{h}) = \lambda(\vec{x}, \vec{h}) = \lambda \cdot 0 = 0,$$
+        и поэтому $\lambda \vec{x} \in \mathcal{H}^\perp$, если $\vec{x} \in \mathcal{H}^\perp$.
+    \end{enumerate}
+    Следовательно, $\mathcal{H}^\perp$ является линейным подпространством в $\mathcal{E}$.
+
+    Отметим, что любой вектор $\vec{x} \in \mathcal{H} \cap \mathcal{H}^\perp$ ортогонален самому себе: $(\vec{x}, \vec{x}) = 0$, так как любой вектор из $\mathcal{H}^\perp$ ортогонален любому вектору подпространства $\mathcal{H}$. Но вектор ортогонален самому себе лишь в случае, когда он нулевой. Поэтому $\mathcal{H} \cap \mathcal{H}^\perp = \{\vec{0}\}$, а сумма $\mathcal{H} + \mathcal{H}^\perp$ рассматриваемых линейных подпространств является прямой. Докажем, что эта прямая сумма совпадает со всем евклидовым пространством $\mathcal{E}$.
+
+    Выберем некоторый ортонормированный базис $\vec{f_1}, \ldots, \vec{f_m}$ в линейном подпространстве $\mathcal{H}$ и дополним его до базиса $\vec{f_1}, \ldots, \vec{f_m}, \vec{f}_{m + 1}, \ldots, \vec{f_n}$ во всем евклидовом пространстве $\mathcal{E}, \dim \mathcal{E} = n$. Исходя из этого базиса построим при помощи процесса Грама-Шмидта ортонормированный базис $e = (\vec{e_1}, \ldots, \vec{e_m}, \vec{e}_{m + 1}, \ldots, \vec{e_n})$ в $\mathcal{E}$. Так как первые $m$ векторов $\vec{f_1}, \ldots, \vec{f_m}$ исходного базиса попарно ортогональны и имеют единичную длину, процесс ортогонализации оставит их без изменения, т.е. $\vec{e_i} = \vec{f_i}, i = \overline{1, m}$. Векторы $\vec{e}_{m + 1}, \ldots, \vec{e_n}$ ортогональны каждому из векторов $\vec{e_1}, \ldots, \vec{e_m}$ базиса линейного подпространства $\mathcal{H}$ и, следовательно, ортогональны $\mathcal{H}$, так как $\mathcal{H} = span\{\vec{e_1}, \ldots, \vec{e_m}\}$. Поэтому все они попадают в ортогональное дополнение $\mathcal{H}^\perp$.
+
+    Рассмотрим произвольный вектор $\vec{x} \in \mathcal{E}$ и запишем его разложение по базису $e$:
+    $$\vec{x} = x_1\vec{e_1} + \ldots + x_n\vec{e_n}.$$
+    Легко увидеть, что $\vec{x_1} = x_1\vec{e_1} + \ldots + x_m\vec{e_m}$ есть вектор из $\mathcal{H}$, а $\vec{x_2} = x_{m + 1}\vec{e}_{m + 1} + \ldots + x_n\vec{e_n}$ есть вектор из $\mathcal{H}^\perp$, при этом $\vec{x} = \vec{x_1} + \vec{x_2}$. Следовательно, $\vec{x} \in \mathcal{H} \oplus \mathcal{H}^\perp$, и так как вектор $\vec{x}$ выбирался произвольно, то $\mathcal{H} \oplus \mathcal{H}^\perp = \mathcal{E}$.
+
+    Согласно следствию $\eqref{cor:corollary_4_6}$ из теоремы $\eqref{thm:theorem_4_6}$ о размерностях суммы и пересечения подпространств, из соотношения $\mathcal{H} \oplus \mathcal{H}^\perp = \mathcal{E}$ вытекает следующее равенство для размерностей: $\dim \mathcal{E} = \dim \mathcal{H} + \dim \mathcal{H}^\perp$.
+\end{proof}
+
+\begin{corollary}
+    Каково бы ни было линейное подпространство $\mathcal{H}$ в евклидовом пространстве $\mathcal{E}$, любой вектор $\vec{x} \in \mathcal{E}$ можно однозначно представить в виде
+    \begin{equation}
+        \vec{x} = \underbrace{\vec{h}}_{\text{ортогональная проекция}} + \underbrace{\vec{h}^\perp}_{\text{ортогональная составляющая}},
+    \end{equation}
+    где $\vec{h} \in \mathcal{H}, \vec{h}^\perp \in \mathcal{H}^\perp$.
+\end{corollary}

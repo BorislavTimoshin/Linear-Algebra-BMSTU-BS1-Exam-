@@ -1,0 +1,43 @@
+\section{
+    Прямая сумма подпространств. Критерий прямой суммы.
+}
+
+\begin{definition}
+    Сумму двух линейных подпространств $\mathcal{H}_1$ и $\mathcal{H}_2$ данного линейного пространства называют \textbf{\textit{прямой суммой}}, если представление любого ее вектора $\vec{x} = \vec{x_1} + \vec{x_2}$, $\vec{x_1} \in \mathcal{H}_1$, $\vec{x_2} \in \mathcal{H}_2$ - единственно.
+\end{definition}
+
+\begin{designation}
+    $\mathcal{H}_1 \oplus \mathcal{H}_2$.
+\end{designation}
+
+\begin{theorem}[Критерий прямой суммы]
+    Для того чтобы сумма $\mathcal{H}_1 + \mathcal{H}_2$ линейных подпространств $\mathcal{H}_1$ и $\mathcal{H}_2$ была прямой, необходимо и достаточно, чтобы пересечение этих линейных подпространств было нулевым подпространством, т.е. $\mathcal{H}_1 \cap \mathcal{H}_2 = \{\vec{0}\}$.
+\end{theorem}
+
+\begin{proof}~
+    \begin{description}
+        \item[$(\implies)$] 
+            Пусть сумма $\mathcal{H}_1 + \mathcal{H}_2$ является прямой суммой. Выберем любой вектор $\vec{y} \in \mathcal{H}_1 \cap \mathcal{H}_2$. Тогда $\vec{y} \in \mathcal{H}_1 + \mathcal{H}_2$ и для него справедливы два представления
+            \begin{equation}
+                \vec{y} = \vec{y} + \vec{0}, \quad \vec{y} = \vec{0} + \vec{y},
+                \label{eq:theorem_5_1_1}
+            \end{equation}
+            в каждом из которых левое слагаемое является элементом линейного подпространства $\mathcal{H}_1$, а правое — $\mathcal{H}_2$. Так как $\mathcal{H}_1 + \mathcal{H}_2$ является прямой суммой, то оба представления $\eqref{eq:theorem_5_1_1}$ совпадают, т.е. $\vec{y} = \vec{0}$. Значит, $\mathcal{H}_1 \cap \mathcal{H}_2$ содержит единственный вектор $\vec{0}$.
+
+        \item[$(\impliedby)$]
+            Пусть $\mathcal{H}_1 \cap \mathcal{H}_2 = \{\vec{0}\}$. Рассмотрим произвольный вектор $x \in \mathcal{H}_1 + \mathcal{H}_2$ и докажем, что любые два его представления
+            \begin{equation}
+                \vec{x} = \vec{x_1} + \vec{x_2}, \quad \vec{x_1} \in \mathcal{H}_1, \quad \vec{x_2} \in \mathcal{H}_2;
+                \label{eq:theorem_5_1_2}
+            \end{equation}
+            \begin{equation}
+                \vec{x} = \vec{x_1'} + \vec{x_2'}, \quad \vec{x_1'} \in \mathcal{H}_1, \quad \vec{x_2'} \in \mathcal{H}_2,
+                \label{eq:theorem_5_1_3}
+            \end{equation}
+            совпадают.
+
+            Вычтем из равенства $\eqref{eq:theorem_5_1_2}$ равенство $\eqref{eq:theorem_5_1_3}$. В результате получим $(\vec{x_1} + \vec{x_2}) - (x_1' + x_2') = \vec{0}$, откуда
+            $$\vec{x_1} - \vec{x_1'} = \vec{x_2'} - \vec{x_2}$$
+            Но тогда, с одной стороны, вектор $\vec{y} = \vec{x_1} - \vec{x_1'}$ принадлежит линейному подпространству $\mathcal{H}_1$, а с другой — он, согласно представлению $y = \vec{x_2'} - \vec{x_2}$ принадлежит линейному подпространству $\mathcal{H}_2$. Следовательно, $\vec{y} \in \mathcal{H}_1 \cap \mathcal{H}_2$, а так как $\mathcal{H}_1 \cap \mathcal{H}_2 = \{\vec{0}\}$, то и $\vec{y} = \vec{0}$. Поэтому $\vec{x_1} - \vec{x_1'} = \vec{0}$ и $\vec{x_2} - \vec{x_2'} = \vec{0}$, т.е. представления $\eqref{eq:theorem_5_1_2}$ и $\eqref{eq:theorem_5_1_3}$ совпадают.
+    \end{description}
+\end{proof}

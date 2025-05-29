@@ -1,0 +1,78 @@
+\section{
+    Евклидовы и унитарные пространства. Три примера. Неравенство Коши-Буняковского (Шварца).
+}
+
+\subsection{
+    Евклидовы и унитарные пространства. Три примера.
+}
+
+\textbf{Примеры $\mathcal{E}$:}
+\begin{enumerate}
+    \item В линейных пространствах $\mathcal{V}_2$ и $\mathcal{V}_3 \colon (\vec{x}, \vec{y}) = |\vec{x}||\vec{y}|\cos \widehat{(\vec{x}, \vec{y})}$.
+    \item В арифметическом линейном пространстве $\RR^n \colon (\vec{x}, \vec{y}) = x_1y_1 + \ldots + x_ny_n$. 
+    \item Линейное пространство $C[0, 1]$ всех функций, непрерывных на отрезке $[0, 1]$ становится евклидовым, если в нем ввести скалярное произведение:
+    $$(\vec{f}, \vec{g}) = \int_{0}^{1} f(x)g(x) \dd x.$$
+\end{enumerate}
+
+\textbf{Примеры $\mathcal{U}$:}
+
+\begin{enumerate}
+    \item $\CC^n \colon (\vec{x}, \vec{y}) = x_1\overline{y}_1 + x_2\overline{y}_2 + \ldots + x_n\overline{y}_n$.
+\end{enumerate}
+
+
+\newpage
+
+
+\subsection{
+    Неравенство Коши-Буняковского (Шварца).
+}
+
+\begin{theorem}
+    Для любых векторов $\vec{x}, \vec{y} \in \mathcal{E}$ (или $\mathcal{U}$) справедливо неравенство Коши-Буняковского
+    $$|(\vec{x}, \vec{y})|^2 \leq (\vec{x}, \vec{x}) (\vec{y}, \vec{y}),$$
+    причем $|(\vec{x}, \vec{y})|^2 = (\vec{x}, \vec{x}) (\vec{y}, \vec{y}) \iff \vec{x} \parallel \vec{y}.$
+\end{theorem}
+
+\begin{proof}~
+
+    \textbf{Доказательство для $U$.}
+    
+    При $\vec{x} = \vec{0}$ обе части неравенства равны нулю, значит, неравенство выполняется. Отбрасывая этот очевидный случай, будем считать, что $\vec{x}, \vec{y} \ne \vec{0}$, $(\vec{x}, \vec{y}) \ne 0$, $t \in \CC$.
+    
+    $$(\vec{x} + t\vec{y}, \vec{x} + t\vec{y}) = (\vec{x}, \vec{x}) + \underbrace{t(\vec{y}, \vec{x}) + \overline{t}(\vec{x}, \vec{y})}_{\star} + t \cdot \overline{t}(\vec{y}, \vec{y}) = (\vec{x}, \vec{x}) + \underbrace{2 \text{Re}(t(\vec{y}, \vec{x}))}_{\star} + |t|^2(\vec{y}, \vec{y}) = \underbrace{(\vec{x}, \vec{x})}_{\in \RR} + \underbrace{2s|(\vec{x}, \vec{y})|}_{\in \RR} + \underbrace{s^2(\vec{y}, \vec{y})}_{\in \RR}$$
+
+    Выберем $t$ так, чтобы $\arg{t} = -\arg{(y, x)}$
+
+    $t = s(\cos \varphi + isin\varphi) = se^{i\varphi}$, где $s = |t|$.
+
+    $(y, x) = |(x, y)|e^{i(-\varphi)}$
+
+    Итак, $2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})) = 2 \cdot \text{Re} (se^{i\varphi} \cdot |(\vec{x}, \vec{y})|e^{-i\varphi}) = 2s|(\vec{y}, \vec{x})|$
+
+    $(\vec{x}, \vec{x}) + 2s|(\vec{x}, \vec{y})| + s^2(\vec{y}, \vec{y}) \geq 0$
+
+    $D = |(\vec{x}, \vec{y})|^2 - (\vec{x}, \vec{x})(\vec{y}, \vec{y}) \leq 0$
+
+
+    \bigbreak
+    
+    $\text{Примечание } (\star) \colon$ Пусть $t = p + iq, (\vec{y}, \vec{x}) = a + ib$, тогда $\overline{t} = p - iq, \overline{(\vec{y}, \vec{x})} = a - ib$. 
+    
+    \begin{align*}
+        \text{\textbf{1)} } t(\vec{y}, \vec{x}) + \overline{t} \cdot (\vec{x}, \vec{y}) = t(\vec{y}, \vec{x}) + \overline{t} \cdot \overline{(\vec{y}, \vec{x})} = (p + iq)(a + ib) + &(p - iq)(a - ib) = \\ = pa + pib + aiq - qb + pa - pib - aiq - qb = 2pa - 2qb = 2 \cdot (pa - qb).\\
+        \text{\textbf{2)} } 2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})) = 2 \cdot \text{Re}((p + iq)(a + ib)) = 2 \cdot \text{Re}(pa - qb + i(pb +& aq)) = 2 \cdot (pa - qb).\\
+        \text{\textbf{3)} } t(\vec{y}, \vec{x}) + \overline{t} \cdot (\vec{x}, \vec{y}) = 2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x}))
+    \end{align*}
+\end{proof}
+
+\begin{corollary}
+    В случае линейного арифметического пространства $\RR^n$ неравенство Коши-Буняковского трансформируется в \textbf{неравенство Коши}:
+    $$(a_1b_1 + \ldots + a_nb_n)^2 \leq (a_1^2 + \ldots + a_n^2)(b_1^2 + \ldots + b_n^2).$$
+    Равенство достигается при линейной зависимости векторов, т.е. $\frac{a_i}{b_i} = const, \quad i = \overline{1, n}$.
+\end{corollary}
+
+\begin{corollary}
+    В евклидовом пространстве $C[0, 1]$, скалярное произведение в котором выражается определенным интегралом, неравенство Коши-Буняковского превращается в неравенство Буняковского-Шварца:
+    $$\left( \int_0^1 f(x)g(x) \, dx \right)^2 \le \left( \int_0^1 f(x)^2 \, dx \right) \left( \int_0^1 g(x)^2 \, dx \right)$$
+\end{corollary}
