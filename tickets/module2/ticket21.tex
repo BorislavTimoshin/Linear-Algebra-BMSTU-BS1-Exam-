@@ -79,7 +79,7 @@ $$\mathscr{A}\vec{e_n} = a_{1n}\vec{f_1} + \ldots + a_{mn}\vec{f_m},$$
 }
 
 \begin{theorem}
-    Пусть $\mathscr{A} \colon \mathcal{L} \to \mathcal{L}$ - линейный оператор. Тогда столбец $y$ координат вектора $\vec{y} = \mathscr{A}\vec{x}$ в данном базисе $b$ линейного пространства $\mathcal{L}$ равен произведению $Ax$ матрицы $A$ оператора $\mathscr{A}$ в базисе $b$ на столбец $x$ координат вектора $\vec{x}$ в том же базисе: $y = Ax$.
+    Пусть $\mathscr{A} \colon \mathcal{L} \to \mathcal{L}$ - линейный оператор. Тогда столбец $y_b$ координат вектора $\vec{y} = \mathscr{A}\vec{x}$ в данном базисе $b$ линейного пространства $\mathcal{L}$ равен произведению $A_bx_b$ матрицы $A_b$ оператора $\mathscr{A}$ в базисе $b$ на столбец $x_b$ координат вектора $\vec{x}$ в том же базисе: $y_b = A_bx_b$.
     \label{thm:theorem_21_1}
 \end{theorem}
 
@@ -89,13 +89,18 @@ $$\mathscr{A}\vec{e_n} = a_{1n}\vec{f_1} + \ldots + a_{mn}\vec{f_m},$$
     \begin{align*}
         \vec{y} &= \mathscr{A}\vec{x} =  \mathscr{A}(x_1\vec{b_1} + \ldots + x_n\vec{b_n}) = x_1(\mathscr{A}\vec{b_1}) + \ldots + x_n(\mathscr{A}\vec{b_n}) = \\
         &= x_1(a_{11}\vec{b_1} + \ldots + a_{n1}\vec{b_n}) + \ldots + x_n(a_{1n}\vec{b_1} + \ldots + a_{nn}\vec{b_n}) = \\
-        &= (a_{11}x_1 + \ldots + a_{1n}x_n)\vec{b_1} + \ldots + (a_{n1}x_1 + \ldots + a_{nn}x_n)\vec{b_n}
+        &= (a_{11}x_1 + \ldots + a_{1n}x_n)\vec{b_1} + \ldots + (a_{n1}x_1 + \ldots + a_{nn}x_n)\vec{b_n} = \\
+        &= b \cdot \begin{pmatrix} 
+            a_{11}x_1 + \ldots + a_{1n}x_n \\
+            \vdots \\
+            a_{n1}x_1 + \ldots + a_{nn}x_n
+        \end{pmatrix}
     \end{align*}
 
-    Столбец координат вектора $\mathscr{A}\vec{x}$ в базисе $b$ имеет вид
+    Столбец координат вектора $\vec{y} = \mathscr{A}\vec{x}$ в базисе $b$ имеет вид
 
     \begin{equation*}
-        \begin{pmatrix} 
+        y_b = (\mathscr{A}\vec{x})_b = \begin{pmatrix} 
             a_{11}x_1 + \ldots + a_{1n}x_n \\
             \vdots \\
             a_{n1}x_1 + \ldots + a_{nn}x_n
@@ -109,9 +114,13 @@ $$\mathscr{A}\vec{e_n} = a_{1n}\vec{f_1} + \ldots + a_{mn}\vec{f_m},$$
             x_1 \\
             \vdots \\
             x_n
-        \end{pmatrix} = Ax
+        \end{pmatrix} = A_bx_b
     .\end{equation*}
 \end{proof}
+
+\begin{corollary}
+    $\vec{y} = \mathscr{A}\vec{x} = bA_bx_b.$
+\end{corollary}
 
 
 \newpage
@@ -131,9 +140,9 @@ $$(\mathscr{B}\mathscr{A})(\lambda\vec{x} + \mu\vec{y}) = \mathscr{B}(\mathscr{A
 Введенный линейный оператор $\mathscr{B}\mathscr{A}$ называют \textit{\textbf{произведением линейных операторов}} $\mathscr{B}$ и $\mathscr{A}$.
 
 \begin{theorem}
-    Пусть в линейном пространстве $\mathcal{L}$ действуют линейные операторы $\mathscr{A}$ и $\mathscr{B}$, а $A$ и $B$ - матрицы этих линейных операторов в некотором базисе $b$. Тогда матрицей линейного оператора $\mathscr{B}\mathscr{A}$ в том же базисе $b$ является матрица $BA$.
+    Пусть в линейном пространстве $\mathcal{L}$ действуют линейные операторы $\mathscr{A}$ и $\mathscr{B}$, а $A_b$ и $B_b$ - матрицы этих линейных операторов в некотором базисе $b$. Тогда матрицей линейного оператора $\mathscr{B}\mathscr{A}$ в том же базисе $b$ является матрица $B_bA_b$.
 \end{theorem}
 
 \begin{proof}
-    $(\mathscr{B}\mathscr{A})\vec{x} = \mathscr{B}(\mathscr{A}\vec{x}) = \mathscr{B}(bA\vec{x}) = b(\mathscr{B}(\mathscr{A}\vec{x})) = b(B(A\vec{x})) = b(\mathscr{B}\mathscr{A})\vec{x}.$
+    $\vec{y} = (\mathscr{B}\mathscr{A})\vec{x} = \mathscr{B}(\mathscr{A}\vec{x}) = \mathscr{B}(bA_bx_b) = b(B_b(A_bx_b)) = b(B_bA_b)x_b.$
 \end{proof}
