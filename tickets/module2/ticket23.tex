@@ -5,6 +5,7 @@
 \subsection{
     Ранг и дефект, ядро и образ линейного оператора.
 }
+Пусть $\mathscr{A} \colon \mathcal{V} \to \mathcal{W}$ - линейный оператор.
 
 \begin{definition}
     \textbf{\textit{Образом}} оператора $\mathscr{A}$ называется множество всех векторов $\vec{y} \in \mathcal{W}$, представимых в виде $\vec{y} = \mathscr{A}\vec{x}$.
@@ -38,6 +39,81 @@
     $\defect \mathscr{A}$.
 \end{designation}
 
+
+\newpage
+
+
 \subsection{
     Теорема про размерности.
 }
+
+\begin{theorem}
+    Пусть $\mathscr{A} \colon \mathcal{V} \to \mathcal{W}$ - линейный оператор, $\dim \mathcal{V} = n$. Тогда $\defect \mathscr{A} + \rank \mathscr{A} = \dim \mathcal{V}$.
+\end{theorem}
+
+\begin{proof}~
+
+    Пусть $\vec{e}_1, \ldots, \vec{e}_r$ - базис в $\ker \mathscr{A}$. Дополним его до базиса $\vec{e}_1, \ldots, \vec{e}_r, \vec{e}_{r + 1}, \ldots, \vec{e}_n$ всего пространства $\mathcal{V}$. Докажем, что $\dim \Im \mathscr{A} = n - r$. Для этого рассмотрим набор векторов $\mathscr{A}(\vec{e}_{r + 1}), \ldots, \mathscr{A}(\vec{e}_n)$ и докажем, что он является базисом в $\Im \mathscr{A}$.
+
+    \bigbreak
+
+    $\Im \mathscr{A} = \Span(\underbrace{\mathscr{A}(\vec{e}_1), \ldots, \mathscr{A}(\vec{e}_r)}_{\vec{0}}, \mathscr{A}(\vec{e}_{r + 1}), \ldots, \mathscr{A}(\vec{e}_n)) = \Span(\mathscr{A}(\vec{e}_{r + 1}), \ldots, \mathscr{A}(\vec{e}_n))$.
+
+    Предположим, что $\lambda_{r + 1}\mathscr{A}(\vec{e}_{r + 1}) + \ldots + \lambda_n\mathscr{A}(\vec{e}_n) = \mathscr{A}(\lambda_{r + 1}\vec{e}_{r + 1} + \ldots + \lambda_n\vec{e}_n) = \vec{0}_{\mathcal{W}}.$
+
+    Значит, $\lambda_{r + 1}\vec{e}_{r + 1} + \ldots + \lambda_n\vec{e}_n \in \ker \mathscr{A}$, но тогда $\lambda_{r + 1}\vec{e}_{r + 1} + \ldots + \lambda_n\vec{e}_n = \mu_1\vec{e}_1 + \ldots + \mu_r\vec{e}_r$, для некоторых $\mu_1, \ldots, \mu_r$. Так как векторы $\vec{e}_1, \ldots, \vec{e}_n$ - линейно независимы, то все $\lambda_i = 0$ (и $\mu_j$ тоже), следовательно, векторы $\vec{e}_{r + 1}, \ldots, \vec{e}_n$ - линейно независимы.
+
+    \bigbreak
+
+    При этом любой вектор $\vec{y} \in \Im \mathscr{A}$ является линейной комбинацией векторов $\mathscr{A}(\vec{e}_{r + 1}), \ldots, \mathscr{A}(\vec{e}_n)$.
+
+    \bigbreak
+
+    Следовательно, $\mathscr{A}(\vec{e}_{r + 1}), \ldots, \mathscr{A}(\vec{e}_n)$ - базис в $\Im \mathscr{A} \Rightarrow \dim \Im \mathscr{A} = n - r$.
+
+    \bigbreak
+
+    Значит, $\dim \ker \mathscr{A} + \dim \Im \mathscr{A} = \defect \mathscr{A} + \rank \mathscr{A} = r + n - r = n = \dim \mathcal{V}$.
+\end{proof}
+
+\bigbreak
+
+\begin{comment}
+    Можно ли утверждать, что если $\mathscr{A} \colon \mathcal{V} \to \mathcal{V}$, то $\Im \mathscr{A} + \ker \mathscr{A} = \mathcal{V}$?
+
+    \bigbreak
+
+    \textbf{Ответ:} нельзя. 
+    
+    Например, $\mathscr{D} \colon p \longmapsto p'$.
+
+    $p \in P_n(x)$
+
+    $\Im \mathscr{D} = P_{n - 1}(x)$
+    
+    $\ker \mathscr{D} = P_0(x)$
+
+    Но $P_0(x) + P_{n - 1}(x) \ne P_n(x)$.
+    
+\end{comment}
+
+
+\newpage
+
+
+\subsection{
+    Инвариантное подпространство линейного оператора.
+}
+
+\begin{definition}
+    Пусть $\mathscr{A} \colon \mathcal{L} \to \mathcal{L}$ - линейный оператор. Подпространство $\mathcal{V} \in \mathcal{L}$ называется \textbf{\textit{инвариантным подпространством}} оператора $\mathscr{A}$, если оператор $\mathscr{A}$ отображает всякий вектор $\vec{x} \in \mathcal{V}$, в вектор, также принадлежащий подпространству $\mathcal{V}$, то есть $\forall \vec{x} \in \mathcal{V} \colon \vec{y} = \mathscr{A}\vec{x} \in \mathcal{V}$.
+\end{definition}
+
+\begin{example}~
+
+    \begin{itemize}
+        \item Тривиальными примерами являются: само пространство $\mathcal{L}$ и нулевое подпространство (состоящее из единственного нулевого вектора).
+        \item Любой собственный вектор оператора порождает его одномерное инвариантное подпространство.
+        \item Ядро линейного оператора $\ker \mathcal{L}$. 
+    \end{itemize}
+\end{example}
