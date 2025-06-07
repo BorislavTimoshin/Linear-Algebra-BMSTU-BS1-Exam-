@@ -3,41 +3,59 @@
 }
 
 \begin{definition}
-    Сумму двух линейных подпространств $\mathcal{H}_1$ и $\mathcal{H}_2$ данного линейного пространства называют \textbf{\textit{прямой суммой}}, если представление любого ее вектора $\vec{x} = \vec{x_1} + \vec{x_2}$, $\vec{x_1} \in \mathcal{H}_1$, $\vec{x_2} \in \mathcal{H}_2$ - единственно.
+    Сумма линейных подпространств $\mathcal{H}_1, \mathcal{H}_2, \ldots, \mathcal{H}_j$ данного пространства $\mathcal{H}$ называется \textbf{\textit{прямой суммой}}, если представление любого ее вектора $\vec{x} = \vec{x}_1 + \vec{x}_2 + \ldots + \vec{x}_j, \vec{x}_j \in \mathcal{H}_j$ - единственно.
 \end{definition}
 
 \begin{designation}
-    $\mathcal{H}_1 \oplus \mathcal{H}_2$.
+    $\mathcal{H}_1 \oplus \mathcal{H}_2 \oplus \ldots \oplus \mathcal{H}_j = \mathcal{H}$.
 \end{designation}
 
 \begin{theorem}[Критерий прямой суммы]
-    Для того чтобы сумма $\mathcal{H}_1 + \mathcal{H}_2$ линейных подпространств $\mathcal{H}_1$ и $\mathcal{H}_2$ была прямой, необходимо и достаточно, чтобы пересечение этих линейных подпространств было нулевым подпространством, т.е. $\mathcal{H}_1 \cap \mathcal{H}_2 = \{\vec{0}\}$.
+    Для линейных подпространств $\mathcal{L}_1, \ldots, \mathcal{L}_k$ конечномерного пространства $\mathcal{L}$ следующие утверждения равносильны:
+    \begin{enumerate}
+        \item Сумма $\mathcal{L}_1, \ldots, \mathcal{L}_k$ - прямая.
+        \item Совокупность их базисов линейно независима.
+        \item Совокупность базисов образует базис суммы.
+        \item Размерность суммы равна сумме размерностей $\mathcal{L}_j$.
+        \item В сумме существует хотя бы один вектор с единственным разложением по подпространством.
+        \item Произвольная система $\vec{x}_j \in \mathcal{L}_j$, взятых по одному из любого $\mathcal{L}_j$, линейно независима.
+        \item Только для $k = 2$, т.е. $\mathcal{L}_1$ и $\mathcal{L}_2$, $\mathcal{L}_1 \cap \mathcal{L}_2 = \vec{0}$.
+    \end{enumerate}
 \end{theorem}
 
 \begin{proof}~
-    \begin{description}
-        \item[$(\implies)$] 
-            Пусть сумма $\mathcal{H}_1 + \mathcal{H}_2$ является прямой суммой. Выберем любой вектор $\vec{y} \in \mathcal{H}_1 \cap \mathcal{H}_2$. Тогда $\vec{y} \in \mathcal{H}_1 + \mathcal{H}_2$ и для него справедливы два представления
-            \begin{equation}
-                \vec{y} = \vec{y} + \vec{0}, \quad \vec{y} = \vec{0} + \vec{y},
-                \label{eq:theorem_5_1_1}
-            \end{equation}
-            в каждом из которых левое слагаемое является элементом линейного подпространства $\mathcal{H}_1$, а правое — $\mathcal{H}_2$. Так как $\mathcal{H}_1 + \mathcal{H}_2$ является прямой суммой, то оба представления $\eqref{eq:theorem_5_1_1}$ совпадают, т.е. $\vec{y} = \vec{0}$. Значит, $\mathcal{H}_1 \cap \mathcal{H}_2$ содержит единственный вектор $\vec{0}$.
 
-        \item[$(\impliedby)$]
-            Пусть $\mathcal{H}_1 \cap \mathcal{H}_2 = \{\vec{0}\}$. Рассмотрим произвольный вектор $x \in \mathcal{H}_1 + \mathcal{H}_2$ и докажем, что любые два его представления
-            \begin{equation}
-                \vec{x} = \vec{x_1} + \vec{x_2}, \quad \vec{x_1} \in \mathcal{H}_1, \quad \vec{x_2} \in \mathcal{H}_2;
-                \label{eq:theorem_5_1_2}
-            \end{equation}
-            \begin{equation}
-                \vec{x} = \vec{x_1'} + \vec{x_2'}, \quad \vec{x_1'} \in \mathcal{H}_1, \quad \vec{x_2'} \in \mathcal{H}_2,
-                \label{eq:theorem_5_1_3}
-            \end{equation}
-            совпадают.
+    $1 \to 2$: Предположим, что линейно зависима $\Rightarrow$ разложение не единственно, т.е. $\vec{0} = \alpha_1(\vec{x}_1 - \vec{x}_1') + \ldots + \alpha_n(\vec{x}_n - \vec{x}_n')$, что противоречит определению прямой суммы.
 
-            Вычтем из равенства $\eqref{eq:theorem_5_1_2}$ равенство $\eqref{eq:theorem_5_1_3}$. В результате получим $(\vec{x_1} + \vec{x_2}) - (x_1' + x_2') = \vec{0}$, откуда
-            $$\vec{x_1} - \vec{x_1'} = \vec{x_2'} - \vec{x_2}$$
-            Но тогда, с одной стороны, вектор $\vec{y} = \vec{x_1} - \vec{x_1'}$ принадлежит линейному подпространству $\mathcal{H}_1$, а с другой — он, согласно представлению $y = \vec{x_2'} - \vec{x_2}$ принадлежит линейному подпространству $\mathcal{H}_2$. Следовательно, $\vec{y} \in \mathcal{H}_1 \cap \mathcal{H}_2$, а так как $\mathcal{H}_1 \cap \mathcal{H}_2 = \{\vec{0}\}$, то и $\vec{y} = \vec{0}$. Поэтому $\vec{x_1} - \vec{x_1'} = \vec{0}$ и $\vec{x_2} - \vec{x_2'} = \vec{0}$, т.е. представления $\eqref{eq:theorem_5_1_2}$ и $\eqref{eq:theorem_5_1_3}$ совпадают.
-    \end{description}
+    \bigbreak
+
+    $2 \to 3$: Совокупность базисов линейно независима и каждый вектор имеет единственное разложение, то есть совокупность базисов является базисом.
+
+    \bigbreak
+
+    $3 \to 4$: суммируем базисы $\dim \Sigma \mathcal{L}_j = \Sigma \dim \mathcal{L}_j$.
+
+    \bigbreak
+
+    $4 \to 5$: От противного $\Rightarrow$ линейная зависимость векторов базиса.
+
+    \bigbreak
+
+    $5 \to 6$: $\vec{x} = \vec{x}_1 + \ldots + \vec{x}_k$, предположим линейную зависимость, т.е. $\alpha_1\vec{x}_1 + \ldots + \alpha_k\vec{x}_k = \vec{0}$
+
+    $\vec{x} + \vec{0} = \vec{x}$ - не единственное.
+
+    \bigbreak
+
+    $6 \to 1$: $\vec{x}_1,\ldots,\vec{x}_k$ линейно независима $\Rightarrow$ сумма подпространств $\mathcal{L}_1, \ldots, \mathcal{L}_k$ прямая. Предположим обратное. 
+
+    $\vec{x} = \alpha_1\vec{x}_1 + \ldots + \alpha_k\vec{x}_k$,
+    
+    $\vec{x} = \beta_1\vec{x}_1 + \ldots + \beta_k\vec{x}_k$
+
+    То есть $\vec{x}_1,\ldots,\vec{x}_k$ линейно зависимы - противоречие.
+
+    \bigbreak
+
+    $7\leftrightarrow 4$: значит, $\dim \mathcal{L}_1 \cap \mathcal{L}_2 = \vec{0}$.
 \end{proof}

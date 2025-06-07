@@ -143,6 +143,37 @@
 
 
 \subsection{
+    Понятие метрики.
+}
+
+\begin{definition}
+    Пусть $M$ - произвольное непустое множество. Отображение декартова квадрата $M \times M$ на поле $\RR$ называется метрикой, если оно удовлетворяет трем аксиомам:
+    \begin{enumerate}
+        \item $\rho(\vec{x}, \vec{y}) = \rho(\vec{y}, \vec{x})$.
+        \item $\rho(\vec{x}, \vec{y}) \geq 0$, причем $\rho(\vec{x}, \vec{y}) = 0 \iff \vec{x} = \vec{y}$.
+        \item $\rho(\vec{x}, \vec{y}) \leq \rho(\vec{x}, \vec{z}) + \rho(\vec{z}, \vec{y})$ - неравенство треугольника.
+    \end{enumerate}
+\end{definition}
+
+\begin{example}~
+
+    \begin{enumerate}
+        \item $M = \RR, \rho(\vec{x}, \vec{y}) = |\vec{x} - \vec{y}|$.
+        \item $M$ - произвольное непустое множество. Тогда дискретная метрика: 
+        
+        $\rho(\vec{x}, \vec{y}) = 
+        \begin{cases}
+        1, & x \ne y \\
+        0, & x = y
+        \end{cases}$.
+    \end{enumerate}
+\end{example}
+
+
+\newpage
+
+
+\subsection{
     Косинус.
 }
 
