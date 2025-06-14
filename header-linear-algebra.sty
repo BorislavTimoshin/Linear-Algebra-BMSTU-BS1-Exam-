@@ -13,7 +13,8 @@
 \usepackage[inline]{enumitem}
 
 %%% Дополнительная работа с математикой
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+% AMS
 \usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
 \usepackage{systeme}
 
@@ -100,6 +101,8 @@
 \DeclareMathOperator{\id}{\mathop{\mathrm{Id}}}
 \newcommand{\zeroperator}{\mathcal{O}}
 \newcommand{\identityoperator}{\mathcal{I}}
+\DeclareMathOperator{\Aff}{\mathop{\mathrm{Aff}}}
+\newcommand{\downimplies}{\mathrel{\rotatebox[origin=c]{-90}{$\Rightarrow$}}}
 
 
 %% Черный квадрат в доказательствах
@@ -206,13 +209,28 @@
 
 \newcommand{\dd}{\mathop{}\!d}
 
+\usepackage[explicit]{titlesec}
+
+\newcommand*\Hide{%
+\titleformat{\chapter}[display]
+  {}{}{0pt}{\Huge}
+\titleformat{\part}
+  {}{}{0pt}{}
+}
+\titleclass{\part}{straight}
+
+\usepackage{fancyhdr}
+
 \theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
+
 \newtheorem{theorem}{Теорема}[section]
 \newtheorem{proposition}[theorem]{Утверждение}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Определение}
-\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{lemma}{Лемма}
 \newtheorem*{designation}{Обозначение}
 \newtheorem*{corollary}{Следствие}
 \newtheorem*{comment}{Замечание}

@@ -40,7 +40,7 @@
         \item Нулевой: $\zeroperator\vec{x} = \vec{0}$.
         \item Тождественный/единичный: 
         $\identityoperator\vec{x} = \vec{x}$.
-        \item Оператор дифференцирования. Пусть $\mathcal{V} = P_n(x)$ - множество многочленов от переменной $x$ степени не выше $n$ с действительными коэффициентами. Пусть $p \in \mathcal{V}$. Тогда $\mathscr{A} \colon p \to p'$ - линейный оператор.
+        \item Оператор дифференцирования $\mathscr{D} \colon P_n(x) \to P_n(x)$, действующий по правилу $\mathscr{D}f = f'$.
     \end{enumerate}
 \end{example}
 
@@ -90,7 +90,9 @@ $$\mathscr{A}\vec{e_n} = a_{1n}\vec{f_1} + \ldots + a_{mn}\vec{f_m},$$
         \vec{y} &= \mathscr{A}\vec{x} =  \mathscr{A}(x_1\vec{b_1} + \ldots + x_n\vec{b_n}) = x_1(\mathscr{A}\vec{b_1}) + \ldots + x_n(\mathscr{A}\vec{b_n}) = \\
         &= x_1(a_{11}\vec{b_1} + \ldots + a_{n1}\vec{b_n}) + \ldots + x_n(a_{1n}\vec{b_1} + \ldots + a_{nn}\vec{b_n}) = \\
         &= (a_{11}x_1 + \ldots + a_{1n}x_n)\vec{b_1} + \ldots + (a_{n1}x_1 + \ldots + a_{nn}x_n)\vec{b_n} = \\
-        &= b \cdot \begin{pmatrix} 
+        &= \begin{pmatrix}
+            \vec{b}_1 & \ldots & \vec{b}_n
+        \end{pmatrix} \cdot \begin{pmatrix} 
             a_{11}x_1 + \ldots + a_{1n}x_n \\
             \vdots \\
             a_{n1}x_1 + \ldots + a_{nn}x_n

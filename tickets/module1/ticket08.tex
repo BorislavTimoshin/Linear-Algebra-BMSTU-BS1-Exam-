@@ -1,3 +1,47 @@
 \section{
     Линейное аффинное многообразие. Вектор сдвига. Пересечение линейного аффинного многообразия с подпространством, дополнительным к его направляющему подпространству.
 }
+
+\subsection{
+    Пересечение линейного аффинного многообразия с подпространством, дополнительным к его направляющему подпространству.
+}
+
+\begin{theorem}
+    Пусть
+    \begin{enumerate}
+        \item $\mathcal{V}$ - линейное пространство.
+        \item $\mathcal{W}$ - его подпространство.
+        \item $\mathcal{W'}$ - прямое дополнение к $\mathcal{W}$.
+        \item $\vec{a} \in \mathcal{V}$ - фиксированный вектор.
+    \end{enumerate}
+    Тогда $(\vec{a} + \mathcal{W}) \cap \mathcal{W}'$ - одноэлементное множество (т.е. множество, состоящее из одного вектора).
+\end{theorem}
+
+\begin{proof}~
+
+    Рассмотрим произвольный вектор $\vec{\varphi} \in (\vec{a} + \mathcal{W}) \cap \mathcal{W}'$. 
+    
+    Тогда $\vec{\varphi} = \vec{a} + \vec{w}$, для некоторого $\vec{w} \in \mathcal{W}$ и $\vec{\varphi} \in \mathcal{W}'$.
+
+    Так как $\mathcal{W}'$ - прямое дополнение к $\mathcal{W}$, то вектор $\vec{\varphi}$ единственным образом раскладывается в сумму векторов из $\mathcal{W}$ и из $\mathcal{W}'$:
+
+    \begin{equation}
+        \underbrace{\vec{\varphi}}_{\in \mathcal{W'}} = \underbrace{\vec{0}}_{\in \mathcal{W}} + \underbrace{\vec{\varphi}}_{\in \mathcal{W'}}\text{ - вот оно, это единственное разложение.}
+        \label{eq:equation_8_1}
+    \end{equation}
+
+    Такое же разложение рассмотрим для $\vec{a}$:
+
+    \begin{equation}
+        \vec{a} = \underbrace{\vec{z}}_{\in \mathcal{W}} + \underbrace{\vec{z'}}_{\in \mathcal{W}'}\text{ - оба вектора определены единственным образом}
+        \label{eq:equation_8_2}
+    \end{equation}
+    
+    Тогда 
+
+    \begin{equation}
+        \vec{\varphi} = \vec{a} + \vec{w} = (\vec{z} + \vec{z'}) + \vec{w} = \underbrace{(\vec{z} + \vec{w})}_{\in \mathcal{W}} + \underbrace{\vec{z'}}_{\in \mathcal{W}'}.
+        \label{eq:equation_8_3}
+    \end{equation}
+    Из \eqref{eq:equation_8_1} и \eqref{eq:equation_8_3} имеем: $\vec{\varphi} = \vec{z'}$, а $\vec{z'}$ определяется единственным образом из \eqref{eq:equation_8_2}.
+\end{proof}

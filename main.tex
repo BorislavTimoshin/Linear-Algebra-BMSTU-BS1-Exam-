@@ -1,18 +1,35 @@
-\documentclass[a4paper]{article}
+\documentclass[a4papper]{article}
+\usepackage[left=0.5cm,right=0.5cm,top=2cm,bottom=0.5cm,bindingoffset=0cm]{geometry}
 \usepackage{header-linear-algebra}
 
 \title{\Huge Линейная алгебра, Экзамен}
 
-\author{МГТУ им. Н.Э. Баумана, кафедра ФН1}
+\author{
+    Написано простым \href{https://t.me/Borislav_Timoshin}{BIT-ом} с помощью лекций Гордеевой Н.М., \\ 
+    учебника Канатникова-Крищенко, методичек Власова, Соболева, \\
+    записей одногруппников и старшекурсников,\\ некоторых методичек Мехмата МГУ и,\\ конечно, с помощью загадочного путешественника по млечному пути. \\
+    \\
+    МГТУ им. Н.Э. Баумана, кафедра ФН1.
+}
 
 \date{2024 — 2025}
 
 \begin{document}
+    \pagestyle{fancy}
+    \fancyhead[L]{\thepage}
+    \fancyhead[R]{\hyperlink{toc}{\large Содержание}}
+
     \maketitle
         
     \tableofcontents
 
+    \label{toc}
+
     \newpage
+
+    \Hide
+    
+    \part{Модуль 1.}
 
     \include{tickets/module1/ticket01}
     \include{tickets/module1/ticket02}
@@ -34,6 +51,8 @@
     \include{tickets/module1/ticket18}
     \include{tickets/module1/ticket19}
     \include{tickets/module1/ticket20}
+
+    \part{Модуль 2.}
 
     \include{tickets/module2/ticket21}
     \include{tickets/module2/ticket22}

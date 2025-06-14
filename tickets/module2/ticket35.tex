@@ -1,3 +1,109 @@
 \section{
     Дать определение квадратичной формы. Матрица квадратичной формы и ее преобразование при переходе к новому базису (вывести формулу).
 }
+
+\begin{definition}
+    \textbf{\textit{Квадратичной формой}} называется сумма вида $$f(x_1, \ldots, x_n) = \sum_{i=1}^n b_{ii}x_i^2 + \sum_{1 \leq i < j \leq n} 2b_{ij}x_ix_j,$$
+
+    где $b_{ij}$ - заданные числа, $1 \leq i < j < n$.
+\end{definition}
+
+Ясно, что
+
+$$
+f(x_1, x_2, \ldots, x_n) = 
+\begin{pmatrix}
+x_1 & x_2 & \cdots & x_n
+\end{pmatrix}
+\begin{pmatrix}
+    b_{11} & b_{12} & \cdots & b_{1n} \\
+    b_{21} & b_{22} & \cdots & b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{n1} & b_{n2} & \cdots & b_{nn}
+\end{pmatrix}
+\begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{pmatrix}.
+$$
+
+Столбец $\begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{pmatrix}$ можно рассматривать как координаты вектора $\vec{x}$ в некотором 'первичном' базисе $\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n$, а полученную матрицу $\begin{pmatrix}
+    b_{11} & b_{12} & \cdots & b_{1n} \\
+    b_{21} & b_{22} & \cdots & b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{n1} & b_{n2} & \cdots & b_{nn}
+\end{pmatrix}$ - как матрицу квадратичной формы в этом 'первичном' базисе $\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n$. 
+
+Как она изменится при переходе к новому базису?
+
+Мы знаем, что если $\begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{pmatrix}$ - координаты вектора $\vec{x}$ в базисе $e$, а $\begin{pmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+\end{pmatrix}$ - координаты того же вектора $\vec{x}$ в базисе $f$, то
+
+$$\begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{pmatrix} = T_{e \to f}\begin{pmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+\end{pmatrix}\text{ (см. \ref{subsection:subsection_17_3}).}$$
+
+Тогда 
+
+$$\begin{pmatrix}
+x_1 & x_2 & \cdots & x_n
+\end{pmatrix} = \left(T_{e \to f}\begin{pmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+\end{pmatrix}\right)^T = \begin{pmatrix}
+y_1 & y_2 & \cdots & y_n
+\end{pmatrix} \cdot T_{e \to f}^T.$$
+
+Значит,
+
+$$
+f(x_1, x_2, \ldots, x_n) = 
+\begin{pmatrix}
+y_1 & y_2 & \cdots & y_n
+\end{pmatrix}
+\underbrace{
+T_{e \to f}^T
+\begin{pmatrix}
+    b_{11} & b_{12} & \cdots & b_{1n} \\
+    b_{21} & b_{22} & \cdots & b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{n1} & b_{n2} & \cdots & b_{nn}
+\end{pmatrix}
+T_{e \to f}}_{\text{матрица кв. формы в новом базисе.}}
+\begin{pmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_n
+\end{pmatrix}.
+$$
+
+Значит,
+
+$$\underbracket{B_f}_{\mathclap{\substack{\text{матр. кв.} \\ \text{формы} \\ \text{в новом} \\ \text{базисе } f.}}} = T_{e \to f}^T\underbracket{B_e}_{\mathclap{\substack{\text{исх. матр.} \\ \text{кв. формы} \\ \text{(в старом} \\ \text{базисе } e).}}}T_{e \to f}.$$
