@@ -23,7 +23,7 @@
         \exists \vec{w} \in \mathcal{W} (\vec{a} + (-\vec{a}) = \vec{a} + \underbrace{\vec{w}}_{\in \mathcal{W}}). \\
         \exists \vec{w} \in \mathcal{W} ((-\vec{a}) = \vec{w}). \\
         \downimplies \\
-        -\vec{a} \in \mathcal{W}\text{. Противоречие.}
+        -\vec{a} \notin \mathcal{W}\text{. Противоречие.}
     \end{gather*}
     Это и означает, что если $\vec{a} \notin \mathcal{W}$, то $\vec{a} + \mathcal{W}$ не является подпространством.
 \end{proof}
@@ -54,13 +54,13 @@
 
     Рассмотрим их пересечение $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W})$.
 
-    \textbf{1 случай}: $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \vec{0}$.
+    \textbf{1 случай}: $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \emptyset$.
 
-    Тогда всё доказано. Достаточно привести пример, когда действительно $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \vec{0}$.
+    Тогда всё доказано. Достаточно привести пример, когда действительно $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \emptyset$.
 
     \bigbreak
 
-    \textbf{2 случай}: $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) \ne \vec{0}$.
+    \textbf{2 случай}: $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) \ne \emptyset$.
 
     Зафиксируем некоторый вектор $\vec{c} \in \vec{a} + \mathcal{U}$ и $\vec{c} \in \vec{b} + \mathcal{W}$, т.е. $\vec{c} = \vec{a} + \underbrace{\vec{u}}_{\in \mathcal{U}} = \vec{b} + \underbrace{\vec{w}}_{\in \mathcal{W}}$.
 
@@ -77,17 +77,17 @@
     
         $$\vec{\varphi} = \vec{b} + \vec{y} = (\vec{b} + \vec{w}) + ((-\vec{w}) + \vec{y}) = \vec{c} + \underbrace{(\underbrace{(-\vec{w})}_{\in \mathcal{W}} + \underbrace{\vec{y}}_{\in \mathcal{W}})}_{\in \mathcal{W}} \in \vec{c} +\mathcal{W}.$$
     
-        Итак, $\vec{\varphi} - \vec{c} \in \mathcal{U}$ и $\vec{\varphi} - \vec{c} \in \mathcal{W}$. Значит, $\vec{\varphi} - \vec{c} \in \mathcal{U} \cap \mathcal{W} \Rightarrow \vec{\varphi} \in \vec{c} + \mathcal{U} \cap \mathcal{W}$, ч.т.д.
+        Итак, $\vec{\varphi} - \vec{c} \in \mathcal{U}$ и $\vec{\varphi} - \vec{c} \in \mathcal{W}$. Значит, $\vec{\varphi} - \vec{c} \in \mathcal{U} \cap \mathcal{W} \Rightarrow \vec{\varphi} \in \vec{c} + (\mathcal{U} \cap \mathcal{W})$, ч.т.д.
         
         \item[$\supseteq$] Возьмем произвольный элемент $\vec{c} + \vec{z}$, где $\vec{z} \in \mathcal{U}$ и $\vec{z} \in \mathcal{W}$.
 
         Докажем, что он лежит в $(\vec{a} + \mathcal{U})$. Действительно, 
     
-        $$\vec{c} + \vec{z} = \vec{a} + (\underbrace{(-\vec{a}) + \vec{c}}_{\vec{u} \in \mathcal{U}} + \underbrace{\vec{z}}_{\in \mathcal{U}}) \in \vec{a} + \mathcal{U.}$$
+        $$\vec{c} + \vec{z} = \vec{a} + \underbrace{(\underbrace{(-\vec{a}) + \vec{c}}_{\vec{u} \in \mathcal{U}} + \underbrace{\vec{z}}_{\in \mathcal{U}})}_{\in \mathcal{U}} \in \vec{a} + \mathcal{U.}$$
     
         Докажем, что он лежит в $(\vec{b} + \mathcal{W})$. Действительно, 
     
-        $$\vec{c} + \vec{z} = \vec{b} + (\underbrace{(-\vec{b}) + \vec{c}}_{\vec{w} \in \mathcal{W}} + \underbrace{\vec{z}}_{\in \mathcal{W}}) \in \vec{b} + \mathcal{W.}$$
+        $$\vec{c} + \vec{z} = \vec{b} + \underbrace{(\underbrace{(-\vec{b}) + \vec{c}}_{\vec{w} \in \mathcal{W}} + \underbrace{\vec{z}}_{\in \mathcal{W}})}_{\in \mathcal{W}} \in \vec{b} + \mathcal{W.}$$
     
         Таким образом, $\vec{c} + \vec{z} \in (\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W})$.
     \end{enumerate}

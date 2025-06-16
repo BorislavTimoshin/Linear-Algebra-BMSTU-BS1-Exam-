@@ -26,6 +26,10 @@
     Вещественное линейное пространство с так введенным скалярным произведением называется \textbf{\textit{евклидовым пространством}}.
 \end{definition}
 
+\begin{designation}
+    $\mathcal{E}$.
+\end{designation}
+
 \begin{definition}
     Отображение $\mathcal{V} \times \mathcal{V} \to \CC$, где $\mathcal{V}$ - линейное пространство над полем $\CC$, называется \textbf{\textit{скалярным произведением}}, если выполнены 4 аксиомы:
     \begin{enumerate}[nosep]
@@ -41,7 +45,7 @@
 \end{definition}
 
 \begin{designation}
-    $\mathcal{E}$, $\mathcal{U}$.
+    $\mathcal{U}$.
 \end{designation}
 
 \begin{example}~
@@ -54,8 +58,6 @@
 \end{example}
 
 \textbf{Свойства скалярного произведения.}
-
-Пусть $\vec{x}, \vec{y}, \vec{z}$ - произвольные векторы евклидова пространства, а $\lambda$ - действительное число.
 
 \begin{enumerate}[label={\arabic*°.}]
     \item $(\vec{x}, \vec{y} + \vec{z}) = (\vec{x}, \vec{y}) + (\vec{x}, \vec{z}).$
@@ -76,7 +78,7 @@
     
     \item Любое подпространство $\mathcal{E}$ ($\mathcal{U}$) само является евклидовым (унитарным).
     
-    Непосредственная проверка всез аксиом ленейного пространства и скалярного произведения.
+    Непосредственная проверка всех аксиом ленейного пространства и скалярного произведения.
 \end{enumerate}
 
 
@@ -118,7 +120,7 @@
 
         Используя это неравенство, получаем:
 
-        $\norm{\vec{x} + \vec{y}} ^2 = (\vec{x} + \vec{y}, \vec{x} + \vec{y}) = (\vec{x}, \vec{x}) + 2(\vec{x}, \vec{y}) + (\vec{y}, \vec{y}) \leq (\vec{x}, \vec{x}) + 2 \norm{\vec{x}} \cdot \norm{\vec{y}} + (\vec{y}, \vec{y}) = (\norm{\vec{x}} + \norm{\vec{y}})^2 \implies \norm{\vec{x} + \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}$
+        $\norm{\vec{x} + \vec{y}} ^2 = (\vec{x} + \vec{y}, \vec{x} + \vec{y}) = (\vec{x}, \vec{x}) + 2(\vec{x}, \vec{y}) + (\vec{y}, \vec{y}) \leq (\vec{x}, \vec{x}) + 2 \norm{\vec{x}} \cdot \norm{\vec{y}} + (\vec{y}, \vec{y}) = (\norm{\vec{x}} + \norm{\vec{y}})^2 \implies \norm{\vec{x} + \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}.$
     \end{enumerate}
 \end{proof}
 

@@ -36,34 +36,51 @@
 
 \begin{proof}~
 
-    \textbf{Доказательство для $U$.}
+    \textbf{Доказательство для $\mathcal{U}$.}
     
     При $\vec{x} = \vec{0}$ обе части неравенства равны нулю, значит, неравенство выполняется. Отбрасывая этот очевидный случай, будем считать, что $\vec{x}, \vec{y} \ne \vec{0}$, $(\vec{x}, \vec{y}) \ne 0$, $t \in \CC$.
     
-    $$(\vec{x} + t\vec{y}, \vec{x} + t\vec{y}) = (\vec{x}, \vec{x}) + \underbrace{t(\vec{y}, \vec{x}) + \overline{t}(\vec{x}, \vec{y})}_{\star} + t \cdot \overline{t}(\vec{y}, \vec{y}) = (\vec{x}, \vec{x}) + \underbrace{2 \text{Re}(t(\vec{y}, \vec{x}))}_{\star} + |t|^2(\vec{y}, \vec{y}) = \underbrace{(\vec{x}, \vec{x})}_{\in \RR} + \underbrace{2s|(\vec{x}, \vec{y})|}_{\in \RR} + \underbrace{s^2(\vec{y}, \vec{y})}_{\in \RR}$$
+    $$(\vec{x} + t\vec{y}, \vec{x} + t\vec{y}) = (\vec{x}, \vec{x}) + \underbrace{t(\vec{y}, \vec{x}) + \overline{t}(\vec{x}, \vec{y})}_{\star} + t \cdot \overline{t}(\vec{y}, \vec{y}) = (\vec{x}, \vec{x}) + \underbrace{2 \text{Re}(t(\vec{y}, \vec{x}))}_{\star} + |t|^2(\vec{y}, \vec{y}) = \underbrace{(\vec{y}, \vec{y})|t|^2}_{\geq 0} + \underbrace{2|(\vec{x}, \vec{y})||t|}_{\geq 0} + \underbrace{(\vec{x}, \vec{x})}_{\geq 0}.$$
 
-    Выберем $t$ так, чтобы $\arg{t} = -\arg{(y, x)}$
+    Выберем $t$ так, чтобы $\arg{t} = -\arg{(y, x)}$, тогда $\arg{(y, x)} = -\arg{t}$.
 
-    $t = s(\cos \varphi + isin\varphi) = se^{i\varphi}$, где $s = |t|$.
+    \begin{gather*}
+        t = |t|e^{i\varphi} \\
+        \text{Так как }\arg{(y, x)} = -\arg{t}, \text{ то } \\
+        (y, x) = |(x, y)|e^{i(-\varphi)}.
+    \end{gather*}
 
-    $(y, x) = |(x, y)|e^{i(-\varphi)}$
+    Итак, 
+    
+    $$2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})) = 2 \cdot \text{Re} (|t|e^{i\varphi} \cdot |(\vec{x}, \vec{y})|e^{-i\varphi}) = 2|t||(\vec{y}, \vec{x})|.$$
 
-    Итак, $2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})) = 2 \cdot \text{Re} (se^{i\varphi} \cdot |(\vec{x}, \vec{y})|e^{-i\varphi}) = 2s|(\vec{y}, \vec{x})|$
+    Тогда
 
-    $(\vec{x}, \vec{x}) + 2s|(\vec{x}, \vec{y})| + s^2(\vec{y}, \vec{y}) \geq 0$
-
-    $D = |(\vec{x}, \vec{y})|^2 - (\vec{x}, \vec{x})(\vec{y}, \vec{y}) \leq 0$
-
+    \begin{gather*}
+        \underbrace{(\vec{y}, \vec{y})|t|^2}_{\geq 0} + \underbrace{2|(\vec{x}, \vec{y})||t|}_{\geq 0} + \underbrace{(\vec{x}, \vec{x})}_{\geq 0} \geq 0 \\
+        D = |(\vec{x}, \vec{y})|^2 - (\vec{x}, \vec{x})(\vec{y}, \vec{y}) \leq 0.
+    \end{gather*}
 
     \bigbreak
     
-    $\text{Примечание } (\star) \colon$ Пусть $t = p + iq, (\vec{y}, \vec{x}) = a + ib$, тогда $\overline{t} = p - iq, \overline{(\vec{y}, \vec{x})} = a - ib$. 
-    
-    \begin{align*}
-        \text{\textbf{1)} } t(\vec{y}, \vec{x}) + \overline{t} \cdot (\vec{x}, \vec{y}) = t(\vec{y}, \vec{x}) + \overline{t} \cdot \overline{(\vec{y}, \vec{x})} = (p + iq)(a + ib) + &(p - iq)(a - ib) = \\ = pa + pib + aiq - qb + pa - pib - aiq - qb = 2pa - 2qb = 2 \cdot (pa - qb).\\
-        \text{\textbf{2)} } 2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})) = 2 \cdot \text{Re}((p + iq)(a + ib)) = 2 \cdot \text{Re}(pa - qb + i(pb +& aq)) = 2 \cdot (pa - qb).\\
-        \text{\textbf{3)} } t(\vec{y}, \vec{x}) + \overline{t} \cdot (\vec{x}, \vec{y}) = 2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x}))
-    \end{align*}
+    $\text{\textbf{Примечание} } (\star) \colon$ Пусть $t = p + iq, (\vec{y}, \vec{x}) = a + ib$, $\overline{t} = p - iq, \overline{(\vec{y}, \vec{x})} = a - ib$. Тогда
+
+    \begin{enumerate}
+        \item \begin{align*}
+            t(\vec{y}, \vec{x}) &+ \overline{t} \cdot (\vec{x}, \vec{y}) = t(\vec{y}, \vec{x}) + \overline{t} \cdot \overline{(\vec{y}, \vec{x})} = \\
+            &= (p + iq)(a + ib) + (p - iq)(a - ib) = \\ 
+            &= pa + pib + aiq - qb + pa - pib - aiq - qb = 2pa - 2qb = \\
+            &= 2 \cdot (pa - qb).
+        \end{align*}
+        \item \begin{align*}
+            2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})) &= 2 \cdot \text{Re}((p + iq)(a + ib)) = \\
+            &= 2 \cdot \text{Re}(pa - qb + i(pb + aq)) = \\
+            &= 2 \cdot (pa - qb).
+        \end{align*}
+        \item \begin{align*}
+            t(\vec{y}, \vec{x}) + \overline{t} \cdot (\vec{x}, \vec{y}) = 2 \cdot \text{Re} (t \cdot (\vec{y}, \vec{x})).
+        \end{align*}
+    \end{enumerate}
 \end{proof}
 
 \begin{corollary}

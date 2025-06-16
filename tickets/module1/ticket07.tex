@@ -9,23 +9,23 @@
 Пусть даны $\mathcal{V}$ - линейное пространство над $\PP$, $\mathcal{W}$ - его подпространство, $\vec{a} \in \mathcal{V}$ - некоторый вектор.
 
 \begin{definition}
-    \textbf{\textit{Аффинной линейной комбинацией}} произвольных $s$ векторов $\vec{w}_1, \vec{w}_2, \ldots, \vec{w}_s \in \mathcal{W}$ называется вектор
+    \textbf{\textit{Аффинной линейной комбинацией}} произвольных $s$ векторов $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_s \in \mathcal{V}$ называется вектор
 
-    $$\lambda_0\vec{a} + \lambda_1\vec{w}_1 + \ldots + \lambda_s\vec{w}_s,$$
+    $$\lambda_0\vec{a} + \lambda_1\vec{b}_1 + \lambda_2\vec{b}_2 +  \ldots + \lambda_s\vec{b}_s,$$
 
     где числа $\lambda_i$ удовлетворяют соотношению $\lambda_0 + \lambda_1 + \ldots + \lambda_s = 1$.
 \end{definition}
 
 \begin{definition}
-    \textbf{\textit{Аффинной оболочкой заданных векторов $\vec{w}_1, \ldots, \vec{w}_s \in \mathcal{W}$}} называется множество всех их аффинных линейных комбинаций.
+    \textbf{\textit{Аффинной оболочкой заданных векторов $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_s \in \mathcal{V}$}} называется множество всех их аффинных линейных комбинаций.
 \end{definition}
 
 \begin{designation}
-    $\Aff(\vec{w}_1, \vec{w}_2, \ldots, \vec{w}_s)$.
+    $\Aff(\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_s)$.
 \end{designation}
 
 \begin{theorem}
-    Всякое $k$-мерное ЛАМ $(\vec{a} + \mathcal{W})$ линейного пространства $\mathcal{V}$ может быть представлена как аффинная линейная оболочка $\leq k + 1$ векторов.
+    Всякое $k$-мерное ЛАМ $(\vec{a} + \mathcal{W})$ линейного пространства $\mathcal{V}$ может быть представлено как аффинная линейная оболочка $\leq k$ векторов.
 \end{theorem}
 
 \begin{proof}~
@@ -41,7 +41,7 @@
         \vec{v}_2 = \vec{a} + \vec{e}_2 \\
         \vdots \\
         \vec{v}_k = \vec{a} + \vec{e}_k. \\
-        \text{И докажем, что } \vec{a} + \mathcal{W} = \Aff(\vec{a}, \vec{v}_1, \ldots, \vec{v}_k).
+        \text{И докажем, что } \vec{a} + \mathcal{W} = \Aff(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k).
     \end{gather*}
 
     \begin{enumerate}
@@ -58,9 +58,9 @@
         \end{align*}
         при этом $\lambda_0 + \lambda_1 + \ldots + \lambda_k = 1$.
         
-        Значит, $\vec{a} + \vec{w} \in \Aff(\vec{a}, \vec{v}_1, \ldots, \vec{v}_k)$.
+        Значит, $\vec{a} + \vec{w} \in \Aff(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k)$.
         
-        \item[$\supseteq$] Рассмотрим любой $\vec{x} \in \Aff(\vec{a}, \vec{v}_1, \ldots, \vec{v}_k)$.
+        \item[$\supseteq$] Рассмотрим любой $\vec{x} \in \Aff(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k)$.
 
         Тогда $\vec{x} = \lambda_0\vec{a} + \lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k$, где $\lambda_0 + \lambda_1 + \ldots + \lambda_k = 1$. Выразим $\lambda_0 = 1 - \lambda_1 - \lambda_2 - \ldots - \lambda_k$.
 
@@ -68,8 +68,8 @@
 
         \begin{align*}
             \vec{x} &= (1 - \lambda_1 - \lambda_2 - \ldots - \lambda_k)\vec{a} + \lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k = \\
-            &= \vec{a} + \lambda_1(\vec{a} + \vec{e}_1) + \ldots + \lambda_k(\vec{a} + \vec{e}_k) = \\
-            &= \vec{a} + \underbrace{\lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k}_{\in \mathcal{W}} \in \vec{a} + \mathcal{W}.
+            &= \vec{a} + \lambda_1(\vec{v}_1 - \vec{a}) + \ldots + \lambda_k(\vec{v}_k - \vec{a}) = \\
+            &= \vec{a} + \underbrace{\lambda_1\vec{e}_1 + \ldots + \lambda_k\vec{e}_k}_{\in \mathcal{W}} \in \vec{a} + \mathcal{W}.
         \end{align*}
     \end{enumerate}
 \end{proof}
@@ -91,7 +91,7 @@ $$\vec{x} = \vec{x}_0 + c_1\vec{f}_1 + \ldots + c_k\vec{f}_k,$$
 
 где $\vec{x}_0 \in \RR^n$ - вектор с постоянными коэффициентами, $\vec{f}_1, \ldots, \vec{f}_k \in \RR^n$ - векторы, образующие ФСР, $c_1, \ldots, c_k$ - произвольные константы.
 
-Если рассмотреть $\mathcal{W} = \Span \{\vec{f}_1, \ldots, \vec{f}_k\}$, то получится, что пространство $\mathcal{U}$ всех решений СЛАУ будет представлять из себя ЛАМ:
+Если рассмотреть $\mathcal{W} = \Span \{\vec{f}_1, \ldots, \vec{f}_k\}$, то получится, что множество $\mathcal{U}$ всех решений СЛАУ будет представлять из себя ЛАМ:
 
 $$\mathcal{U} = \vec{x}_0 + \mathcal{W}.$$
 
