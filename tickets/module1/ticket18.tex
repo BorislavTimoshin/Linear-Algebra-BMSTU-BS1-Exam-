@@ -34,13 +34,33 @@
     причем $|(\vec{x}, \vec{y})|^2 = (\vec{x}, \vec{x}) (\vec{y}, \vec{y}) \iff \vec{x} \parallel \vec{y}.$
 \end{theorem}
 
-\begin{proof}~
+\begin{corollary}~
 
-    \textbf{Доказательство для $\mathcal{U}$.}
+    В случае линейного арифметического пр-ва $\RR^n$ неравенство Коши-Буняковского трансформируется в \textbf{неравенство Коши}:
+    $$(a_1b_1 + \ldots + a_nb_n)^2 \leq (a_1^2 + \ldots + a_n^2)(b_1^2 + \ldots + b_n^2).$$
+    Равенство достигается при линейной зависимости векторов, т.е. $\frac{a_i}{b_i} = const, \quad i = \overline{1, n}$.
+\end{corollary}
+
+\begin{corollary}~
+
+    В евклидовом пространстве $C[0, 1]$, скалярное произведение в котором выражается определенным интегралом, неравенство Коши-Буняковского превращается в неравенство Буняковского-Шварца:
+    $$\left( \int_0^1 f(x)g(x) \, dx \right)^2 \le \left( \int_0^1 f(x)^2 \, dx \right) \left( \int_0^1 g(x)^2 \, dx \right).$$
+\end{corollary}
+
+
+\newpage
+
+
+\subsection{
+    Неравенство Коши-Буняковского (доказательство для $\mathcal{U}$).
+}
+
+
+\begin{proof}~
     
     При $\vec{x} = \vec{0}$ обе части неравенства равны нулю, значит, неравенство выполняется. Отбрасывая этот очевидный случай, будем считать, что $\vec{x}, \vec{y} \ne \vec{0}$, $(\vec{x}, \vec{y}) \ne 0$, $t \in \CC$.
     
-    $$(\vec{x} + t\vec{y}, \vec{x} + t\vec{y}) = (\vec{x}, \vec{x}) + \underbrace{t(\vec{y}, \vec{x}) + \overline{t}(\vec{x}, \vec{y})}_{\star} + t \cdot \overline{t}(\vec{y}, \vec{y}) = (\vec{x}, \vec{x}) + \underbrace{2 \text{Re}(t(\vec{y}, \vec{x}))}_{\star} + |t|^2(\vec{y}, \vec{y}) = \underbrace{(\vec{y}, \vec{y})|t|^2}_{\geq 0} + \underbrace{2|(\vec{x}, \vec{y})||t|}_{\geq 0} + \underbrace{(\vec{x}, \vec{x})}_{\geq 0}.$$
+    $$(\vec{x} + t\vec{y}, \vec{x} + t\vec{y}) = (\vec{x}, \vec{x}) + \underbrace{t(\vec{y}, \vec{x}) + \overline{t}(\vec{x}, \vec{y})}_{\star} + t \cdot \overline{t}(\vec{y}, \vec{y}) = (\vec{x}, \vec{x}) + \underbrace{2 \text{Re}(t(\vec{y}, \vec{x}))}_{\star} + |t|^2(\vec{y}, \vec{y}) = \underbrace{(\vec{y}, \vec{y})|t|^2}_{\in \RR} + \underbrace{2|(\vec{x}, \vec{y})||t|}_{\in \RR} + \underbrace{(\vec{x}, \vec{x})}_{\in \RR}.$$
 
     Выберем $t$ так, чтобы $\arg{t} = -\arg{(y, x)}$, тогда $\arg{(y, x)} = -\arg{t}$.
 
@@ -57,7 +77,7 @@
     Тогда
 
     \begin{gather*}
-        \underbrace{(\vec{y}, \vec{y})|t|^2}_{\geq 0} + \underbrace{2|(\vec{x}, \vec{y})||t|}_{\geq 0} + \underbrace{(\vec{x}, \vec{x})}_{\geq 0} \geq 0 \\
+        \underbrace{(\vec{y}, \vec{y})|t|^2}_{\in \RR} + \underbrace{2|(\vec{x}, \vec{y})||t|}_{\in \RR} + \underbrace{(\vec{x}, \vec{x})}_{\in \RR} \geq 0 \\
         D = |(\vec{x}, \vec{y})|^2 - (\vec{x}, \vec{x})(\vec{y}, \vec{y}) \leq 0.
     \end{gather*}
 
@@ -83,13 +103,13 @@
     \end{enumerate}
 \end{proof}
 
-\begin{corollary}
-    В случае линейного арифметического пространства $\RR^n$ неравенство Коши-Буняковского трансформируется в \textbf{неравенство Коши}:
-    $$(a_1b_1 + \ldots + a_nb_n)^2 \leq (a_1^2 + \ldots + a_n^2)(b_1^2 + \ldots + b_n^2).$$
-    Равенство достигается при линейной зависимости векторов, т.е. $\frac{a_i}{b_i} = const, \quad i = \overline{1, n}$.
-\end{corollary}
 
-\begin{corollary}
-    В евклидовом пространстве $C[0, 1]$, скалярное произведение в котором выражается определенным интегралом, неравенство Коши-Буняковского превращается в неравенство Буняковского-Шварца:
-    $$\left( \int_0^1 f(x)g(x) \, dx \right)^2 \le \left( \int_0^1 f(x)^2 \, dx \right) \left( \int_0^1 g(x)^2 \, dx \right).$$
-\end{corollary}
+\subsection{
+    Неравенство Коши-Буняковского (доказательство для $\mathcal{E}$).
+}
+
+
+\begin{proof}~
+
+    
+\end{proof}
