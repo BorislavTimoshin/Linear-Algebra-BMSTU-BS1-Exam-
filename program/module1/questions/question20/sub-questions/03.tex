@@ -1,0 +1,40 @@
+\subsection{
+    Свойства нормы.
+}
+
+\begin{enumerate}[label={\arabic*°.}]
+    \item $\norm{\vec{x}} - \norm{\vec{y}} \leq \norm{\vec{x} \pm \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}$.
+    
+    \item $\norm{\alpha\vec{x} + \beta\vec{y}} \leq \norm{\alpha\vec{x}} + \norm{\beta\vec{y}} = |\alpha|\norm{\vec{x}} + |\beta|\norm{\vec{y}}$.
+
+    \item $\norm{\vec{x} + \vec{y}}^2 + \norm{\vec{x} - \vec{y}}^2 = 2(\norm{\vec{x}}^2 + \norm{\vec{y}}^2)$.
+
+    \begin{proof}
+        \begin{gather*}
+            \norm{\vec{x} + \vec{y}}^2 = (\vec{x} + \vec{y}, \vec{x} + \vec{y}) = (\vec{x}, \vec{x}) + (\vec{x}, \vec{y}) + (\vec{y}, \vec{x}) + (\vec{y}, \vec{y}),\\
+            \norm{\vec{x} - \vec{y}}^2 = (\vec{x} - \vec{y}, \vec{x} - \vec{y}) = (\vec{x}, \vec{x}) - (\vec{x}, \vec{y}) - (\vec{y}, \vec{x}) + (\vec{y}, \vec{y}),\\
+            \norm{\vec{x} + \vec{y}}^2 + \norm{\vec{x} - \vec{y}}^2 = 2(\vec{x}, \vec{x}) + 2(\vec{y}, \vec{y}) = 2(\norm{\vec{x}}^2 + \norm{\vec{y}}^2).
+        \end{gather*}
+    \end{proof}
+    
+    \item Если норма порождена скалярным произведением, т.е. $\norm{\vec{z}} = \sqrt{(\vec{z}, \vec{z})}$, то для неё определено
+    
+    $$(\vec{x}, \vec{y}) = \frac{1}{2}\cdot(\norm{\vec{x} + \vec{y}}^2 - \norm{\vec{x}}^2 - \norm{\vec{y}}^2).$$
+
+    \begin{proof}
+        \begin{align*}
+            &\frac{1}{2}\cdot(\norm{\vec{x} + \vec{y}}^2 - \norm{\vec{x}}^2 - \norm{\vec{y}}^2) = \\
+            &= \frac{1}{2}\cdot((\vec{x} + \vec{y}, \vec{x} + \vec{y}) - (\vec{x}, \vec{x}) - (\vec{y}, \vec{y})) = \\
+            &= \frac{1}{2} \cdot ((\vec{x}, \vec{x}) + 2(\vec{x}, \vec{y}) + (\vec{y}, \vec{y})  - (\vec{x}, \vec{x}) - (\vec{y}, \vec{y})) = \\
+            &= (\vec{x}, \vec{y}).
+        \end{align*}
+    \end{proof}
+    
+    \item В конечномерном пространстве любые две нормы эквивалентны.
+
+    \begin{definition}[P.S.]
+        Две нормы $p$ и $q$ на пространстве $\mathcal{V}$ называются эквивалентными, если
+        
+        $$\exists C_1, C_2 > 0 \colon C_1p(\vec{x}) \leq q(\vec{x}) \leq C_2p(\vec{x}), \forall \vec{x} \in \mathcal{V}.$$
+    \end{definition}
+\end{enumerate}

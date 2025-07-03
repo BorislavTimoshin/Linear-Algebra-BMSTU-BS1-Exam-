@@ -1,0 +1,41 @@
+\subsection{
+    Комплексные числа.
+}
+
+\begin{definition}
+    \textbf{\textit{Комплексным числом $z$}} называется пара $(x, y)$ действительных чисел $x, y \in \RR$, для которой определены понятие равенства и операции сложения и умножения следующим образом:
+    
+    \begin{enumerate}[nosep]
+        \item $z_1 = z_2 \iff x_1 = x_2$ и $y_1 = y_2$.
+        \item $z_1 + z_2 = (x_1 + x_2, \thinspace y_1 + y_2)$.
+        \item $z_1 \cdot z_2 = (x_1x_2 - y_1y_2, \thinspace \thinspace x_1y_2 + x_2y_1)$
+    \end{enumerate}
+\end{definition}
+
+\begin{designation}
+    $\CC$.
+\end{designation}
+
+\begin{definition}
+    \textbf{\textit{Мнимой единицей}} называется число $i = (0, 1)$, причем ее квадратом, является пара $(-1, 0)$.
+\end{definition}
+
+\begin{definition}
+    Комплексное число $\overline{z}$ называется \textbf{\textit{сопряженным}} к $z$, если $\overline{z} = x - iy$, $z = x + iy$.
+\end{definition}
+
+\textbf{Свойства комплексного сопряжения.}
+
+\begin{enumerate}[label={\arabic*°.}]
+    \item $\overline{z + w} = \overline{z} + \overline{w}.$
+    
+    $\overline{z + w} = \overline{(a_1 + b_1 i) + (a_2 + b_2 i)} = \overline{(a_1 + a_2) + (b_1 + b_2) i} = (a_1 + a_2) - (b_1 + b_2)i = (a_1 - b_1 i) + (a_2 - b_2 i) = \overline{z} + \overline{w}.$
+    
+    \item $\overline{zw} = \overline{z} \cdot \overline{w}.$
+    
+    $\overline{z} \cdot \overline{w} = (a_1 - b_1 i) (a_2 - b_2 i) = (a_1 a_2 - b_1 b_2) - (a_1 b_2 + a_2 b_1) i = \overline{zw}.$
+
+    \item $\overline{\overline{z}} = z.$
+
+    $\overline{\overline{z}} = \overline{\overline{a + bi}} = \overline{a - bi} = a + bi = z.$
+\end{enumerate}

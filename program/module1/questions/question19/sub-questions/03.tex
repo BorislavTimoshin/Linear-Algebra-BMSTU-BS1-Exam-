@@ -1,0 +1,24 @@
+\subsection{
+    Как изменится грамиан, если один из векторов заменить его ортогональной проекцией?
+}
+
+Рассмотрим линейное пространство $\mathcal{L} = \Span(\vec{e}_1, \ldots, \vec{e}_{k - 1}, \vec{e}_k, \vec{e}_{k + 1}, \ldots, \vec{e}_n)$ и его подпространство 
+
+$\mathcal{H} = \Span(\vec{e}_1, \ldots, \vec{e}_{k - 1}, \vec{e}_{k + 1}, \ldots, \vec{e}_n)$.
+
+\bigbreak
+
+Представим вектор $\vec{e}_k \in \mathcal{L}$ в виде 
+$$\vec{e}_k = \vec{e}^{\parallel}_k + \vec{e}^{\perp}_k,$$
+
+где $\vec{e}^{\parallel}_k \in \mathcal{H}$ - ортогональная проекция, а $\vec{e}^{\perp}_k \in \mathcal{H}^\perp$ - ортогональная составляющая.
+
+Значит,
+
+\begin{gather*}
+    \vec{e}^{\parallel}_k = \alpha_1\vec{e}_1 + \ldots + \alpha_{k - 1}\vec{e}_{k - 1} + \alpha_{k + 1}\vec{e}_{k + 1} + \ldots + \alpha_n\vec{e}_n. \\
+    \downimplies \\
+    \vec{e}_1, \ldots, \vec{e}_{k - 1}, \vec{e}^{\parallel}_k, \vec{e}_{k + 1}, \ldots, \vec{e}_n \text{ - линейно зависимы.} \\
+    \downimplies \\
+    \det \Gamma(\underbrace{\vec{e}_1, \ldots, \vec{e}_{k - 1}, \vec{e}^{\parallel}_k, \vec{e}_{k + 1}, \ldots, \vec{e}_n}_{\text{Система векторов, полученная заменой } \vec{e}_k \text{ на } \vec{e}^{\parallel}_k.}) = 0
+\end{gather*}

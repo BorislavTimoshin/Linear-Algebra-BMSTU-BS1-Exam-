@@ -1,0 +1,16 @@
+\subsection{
+    Норма вектора в евклидовом пространстве.
+}
+
+\begin{definition}
+    Функция, заданная на линейном пространстве $\mathcal{V}$, которая каждому вектору ставит в соответствие вещественное число, называется \textbf{\textit{нормой}}, если выполнены 3 аксиомы:
+    \begin{enumerate}[nosep]
+        \item $\norm{\vec{x}} \geq 0$, причем $\norm{\vec{x}} = 0 \iff \vec{x} = 0$;
+        \item $\norm{\lambda \vec{x}} = |\lambda| \cdot  \norm{\vec{x}}, \thinspace \lambda \in \RR$;
+        \item $\norm{\vec{x} + \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}$ (неравенство треугольника).
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    Всякое скалярное произведение в евклидовом пространстве определяет норму $\norm{\vec{x}} = \sqrt{(\vec{x}, \vec{x})}$.
+\end{theorem}

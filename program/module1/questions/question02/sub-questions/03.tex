@@ -1,0 +1,41 @@
+\subsection{
+    Связь между базисом и размерностью пространства.
+}
+
+\begin{theorem}
+    Если $\dim \mathcal{L} = n$, то любая линейно независимая система из $n$ векторов является его базисом.
+    \label{thm:theorem_2_1}
+\end{theorem}
+
+\begin{proof}~
+
+    Пусть система векторов $\vec{b_1}, \ldots, \vec{b_n} \in \mathcal{L}$ линейно независима. Тогда для любого вектора $\vec{x} \in \mathcal{L}$ система векторов $\vec{x}, \vec{b_1}, \ldots, \vec{b_n}$ линейно зависима, так как она содержит $n + 1$ вектор, т.е. количество большее, чем размерность линейного пространства. Это значит, что существуют такие коэффициенты $\alpha_0, \alpha_1, \ldots, \alpha_n$, одновременно не равные нулю, что
+
+    \begin{equation}
+        \alpha_0\vec{x} + \alpha_1\vec{b_1} + \ldots + \alpha_n\vec{b_n} = \vec{0}
+        \label{eq:theorem_2_1_1}
+    \end{equation}
+
+    Заметим, что $\alpha_0 \ne 0$, так как в противном случае равенство \eqref{eq:theorem_2_1_1} сводится к равенству
+
+    \begin{equation}
+        \alpha_1\vec{b_1} + \ldots + \alpha_n\vec{b_n} = \vec{0},
+    \end{equation}
+
+    причем среди коэффициентов $\alpha_1, \ldots, \alpha_n$ есть хотя бы один ненулевой (так как $\alpha_0 = 0$). Но это означало бы, что система векторов $\vec{b_1}, \ldots, \vec{b_n}$ линейно зависима. 
+    
+    Учитывая, что $\alpha_0 \ne 0$, из \eqref{eq:theorem_2_1_1} находим
+
+    \begin{equation}
+        \vec{x} = -\frac{\alpha_1}{\alpha_0}\vec{b_1} - \ldots - \frac{\alpha_n}{\alpha_0}\vec{b_n}.
+    \end{equation}
+
+    Так как вектор $\vec{x}$ был выбран произвольно, заключаем, что любой вектор в линейном пространстве $\mathcal{L}$ можно представить в виде линейной комбинации системы векторов $\vec{b_1}, \ldots, \vec{b_n}$.
+
+    Поэтому эта система векторов, по предположению линейно независимая, является базисом в $\mathcal{L}$.
+\end{proof}
+
+\begin{theorem}[обратная]
+    Если в линейном пространстве $\mathcal{L}$ существует базис из $n$ векторов, то $\dim \mathcal{L} = n$.
+    \label{thm:theorem_2_2}
+\end{theorem}

@@ -1,0 +1,52 @@
+\subsection{
+    Пересечение линейных аффинных многообразий.
+}
+
+\begin{theorem}
+    Пересечение двух линейных аффинных многообразий одного линейного пространства либо пусто, либо является линейным аффинным многообразием.
+\end{theorem}
+
+\begin{proof}~
+
+    Пусть дано линейное пространство $\mathcal{V}$, в нем есть некоторые линейные подпространства $\mathcal{U}$ и $\mathcal{W}$. Зафиксируем $\vec{a}, \vec{b} \in \mathcal{V}$. Тогда возникают ЛАМ-я $(\vec{a} + \mathcal{U})$ и $(\vec{b} + \mathcal{W})$.
+
+    Рассмотрим их пересечение $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W})$.
+
+    \textbf{1 случай}: $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \emptyset$.
+
+    Тогда всё доказано. Достаточно привести пример, когда действительно $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \emptyset$.
+
+    \bigbreak
+
+    \textbf{2 случай}: $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) \ne \emptyset$.
+
+    Зафиксируем некоторый вектор $\vec{c} \in \vec{a} + \mathcal{U}$ и $\vec{c} \in \vec{b} + \mathcal{W}$, т.е. $\vec{c} = \vec{a} + \underbrace{\vec{u}}_{\in \mathcal{U}} = \vec{b} + \underbrace{\vec{w}}_{\in \mathcal{W}}$.
+
+    Докажем, что $(\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W}) = \vec{c} + \underbrace{(\mathcal{U} \cap \mathcal{W})}_{\text{явл. ЛПП } \mathcal{V}.}$.
+
+    \begin{enumerate}
+        \item[$\subseteq$] Рассмотрим произвольный вектор $\vec{\varphi} = \vec{a} + \underbrace{\vec{x}}_{\in \mathcal{U}} =\vec{b} + \underbrace{\vec{y}}_{\in \mathcal{W}}.$
+    
+        Докажем, что он лежит в $\vec{c} + (\mathcal{U} \cap \mathcal{W})$.
+    
+        $$\vec{\varphi} = \vec{a} + \vec{x} = (\vec{a} + \vec{u}) + ((-\vec{u}) + \vec{x}) = \vec{c} + \underbrace{(\underbrace{(-\vec{u})}_{\in \mathcal{U}} + \underbrace{\vec{x}}_{\in \mathcal{U}})}_{\in \mathcal{U}} \in \vec{c} +\mathcal{U}.$$
+    
+        Аналогично,
+    
+        $$\vec{\varphi} = \vec{b} + \vec{y} = (\vec{b} + \vec{w}) + ((-\vec{w}) + \vec{y}) = \vec{c} + \underbrace{(\underbrace{(-\vec{w})}_{\in \mathcal{W}} + \underbrace{\vec{y}}_{\in \mathcal{W}})}_{\in \mathcal{W}} \in \vec{c} +\mathcal{W}.$$
+    
+        Итак, $\vec{\varphi} - \vec{c} \in \mathcal{U}$ и $\vec{\varphi} - \vec{c} \in \mathcal{W}$. Значит, $\vec{\varphi} - \vec{c} \in \mathcal{U} \cap \mathcal{W} \Rightarrow \vec{\varphi} \in \vec{c} + (\mathcal{U} \cap \mathcal{W})$, ч.т.д.
+        
+        \item[$\supseteq$] Возьмем произвольный элемент $\vec{c} + \vec{z}$, где $\vec{z} \in \mathcal{U}$ и $\vec{z} \in \mathcal{W}$.
+
+        Докажем, что он лежит в $(\vec{a} + \mathcal{U})$. Действительно, 
+    
+        $$\vec{c} + \vec{z} = \vec{a} + \underbrace{(\underbrace{(-\vec{a}) + \vec{c}}_{\vec{u} \in \mathcal{U}} + \underbrace{\vec{z}}_{\in \mathcal{U}})}_{\in \mathcal{U}} \in \vec{a} + \mathcal{U.}$$
+    
+        Докажем, что он лежит в $(\vec{b} + \mathcal{W})$. Действительно, 
+    
+        $$\vec{c} + \vec{z} = \vec{b} + \underbrace{(\underbrace{(-\vec{b}) + \vec{c}}_{\vec{w} \in \mathcal{W}} + \underbrace{\vec{z}}_{\in \mathcal{W}})}_{\in \mathcal{W}} \in \vec{b} + \mathcal{W.}$$
+    
+        Таким образом, $\vec{c} + \vec{z} \in (\vec{a} + \mathcal{U}) \cap (\vec{b} + \mathcal{W})$.
+    \end{enumerate}
+\end{proof}

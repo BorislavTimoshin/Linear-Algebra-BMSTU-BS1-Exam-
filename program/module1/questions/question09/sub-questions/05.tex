@@ -1,0 +1,51 @@
+\subsection{
+    *Полезные факты, которые тоже могут быть на экзамене.
+}
+
+\begin{lemma}~
+
+    Пусть
+
+    \begin{enumerate}
+        \item $\mathcal{E}$ - $n$-мерное евклидово пространство;
+        \item $\vec{e}_1, \ldots, \vec{e}_n$ - некоторый базис $\mathcal{E}$;
+        \item $\vec{x}_e = \begin{pmatrix}
+            x_1 \\
+            \vdots \\
+            x_n
+        \end{pmatrix}$ - столбец координат $\vec{x}$ в базисе $\vec{e}_1, \ldots, \vec{e}_n$;
+        \item $\vec{y}_e = \begin{pmatrix}
+            y_1 \\
+            \vdots \\
+            y_n
+        \end{pmatrix}$ - столбец координат $\vec{y}$ в базисе $\vec{e}_1, \ldots, \vec{e}_n$;
+    \end{enumerate}
+
+    Тогда 
+    $$(\vec{x}, \vec{y}) = \vec{x}^T_e\Gamma_e\vec{y}_e.$$
+    \label{lemma:lemma_1}
+\end{lemma}
+
+\begin{proof}~
+
+    \begin{align*}
+        (\vec{x}, \vec{y}) &= (\sum_{i = 1}^nx_i\vec{e}_i, \sum_{j = 1}^ny_j\vec{e}_j) = \\ 
+        &=\sum_{i = 1}^n\sum_{j =  1}^n(x_iy_j(\vec{e}_i, \vec{e}_j)) = \\
+        &= \vec{x}^T_e\Gamma_e\vec{y}_e,
+    \end{align*}
+
+    где $\Gamma_e$ - матрица Грама для системы векторов $\vec{e}_1, \ldots, \vec{e}_n$.
+\end{proof}
+
+\begin{corollary}~
+
+    Пусть $e$ - ОНБ $\mathcal{E}$. Тогда матрица Грама для этого базиса является единичной. Поэтому
+
+    $$(\vec{x}, \vec{y}) = \vec{x}^T_eE\vec{y}_e = \vec{x}^T_e\vec{y}_e = x_1y_1 + x_2y_2 + \ldots + x_ny_n.$$
+
+    В частности,
+
+    $$\norm{\vec{x}} = \sqrt{(\vec{x}, \vec{x})} = \sqrt{x^T_ex_e} = \sqrt{x^2_1 + \ldots + x^2_n}.$$
+
+    \label{corollary:corollary_1}
+\end{corollary}

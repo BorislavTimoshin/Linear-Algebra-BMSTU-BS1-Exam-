@@ -1,0 +1,27 @@
+\subsection{
+    Вывод формулы для преобразования координат вектора при переходе к новому базису.
+}
+
+Пусть в $n$-мерном линейном пространстве $\mathcal{L}$ заданы два базиса: старый $b = (\vec{b_1}, \ldots, \vec{b_n})$ и новый $c = (\vec{c_1}, \ldots, \vec{c_n})$.
+
+Разложим векторы базиса $c$ по базису $b$:
+
+$$\vec{c_i} = \alpha_{1i}\vec{b_1} + \ldots + \alpha_{ni}\vec{b_n}, \quad i = \overline{1, n}.$$
+
+Запишем эти представления в матричной форме:
+
+$$\vec{c_i} = b \begin{pmatrix} \alpha_{1i} \\ \vdots \\ \alpha_{ni} \end{pmatrix}, \quad  i = \overline{1, n},$$
+
+или
+
+$$c = bT_{b \to c},$$
+
+где
+
+\begin{equation*}
+    T_{b \to c} = \left(\begin{array}{ccc}
+        \alpha_{11} & \ldots & \alpha_{1n} \\
+        \hdotsfor{3} \\
+        \alpha_{n1} & \ldots & \alpha_{nn}
+    \end{array}\right).
+\end{equation*}

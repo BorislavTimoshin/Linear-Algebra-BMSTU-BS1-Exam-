@@ -1,0 +1,35 @@
+\subsection{
+    Дать определение сопряженного и самосопряженного линейного оператора.
+}
+
+Пусть $\mathcal{E}$ - евклидово пространство.
+
+\begin{definition}
+    Линейный оператор $\mathscr{A^*} \colon \mathcal{E} \to \mathcal{E}$ называют сопряженным к линейному оператору $\mathscr{A} \colon \mathcal{E} \to \mathcal{E}$, если для любых векторов $\vec{x}, \vec{y} \in \mathcal{E}$ верно равенство
+    $$(\mathscr{A}\vec{x}, \vec{y}) = (\vec{x}, \mathscr{A^*}\vec{y}).$$
+\end{definition}
+
+\begin{example}~
+    
+    Вектор $\vec{a} \in \mathcal{V}_3$ порождает линейный оператор $\mathscr{A} \colon \mathcal{V}_3 \to \mathcal{V}_3$ согласно формуле
+    
+    $$\mathscr{A}\vec{x} = \vec{a} \times \vec{x}.$$
+
+    Найдем оператор, сопряженный оператору $\mathscr{A}$:
+    \begin{align*}
+        (\mathscr{A}\vec{x}, &\vec{y}) = (\vec{a} \times \vec{x}, \vec{y}) = \vec{a}\vec{x}\vec{y} = \vec{y}\vec{a}\vec{x} = (\vec{y} \times \vec{a}, \vec{x}) = \\
+        &= (\vec{x}, \vec{y} \times \vec{a}) = (\vec{x}, -\vec{a} \times \vec{y}) = (\vec{x}, -\mathscr{A}\vec{y}).
+    \end{align*}
+
+    Значит, $\mathscr{A^*} = -\mathscr{A}.$
+\end{example}
+
+\begin{definition}
+    Линейный оператор $\mathscr{A}$, действующий в евклидовом пространстве, называют самосопряженным, если $\mathscr{A^*} = \mathscr{A}$. То есть для любых векторов $\vec{x}$ и $\vec{y}$ верно равенство
+
+    $$(\mathscr{A}\vec{x}, \vec{y}) = (\vec{x}, \mathscr{A}\vec{y}).$$
+\end{definition}
+
+\begin{example}
+    Тождественный $\mathscr{I}$ и нулевой $\mathscr{O}$.
+\end{example}

@@ -1,0 +1,126 @@
+\subsection{
+    Свойства ортогональных преобразований.
+}
+
+\begin{enumerate}[label={\arabic*°.}]
+    \item Сохраняет ортогональность, т.е. $\vec{x} \perp \vec{y} \Rightarrow \mathscr{A}\vec{x} \perp \mathscr{A}\vec{y}$.
+
+    \begin{proof}
+        Очевидно.
+    \end{proof}
+    
+    \item Сохраняет норму вектора, т.е. $\norm{\mathscr{A}\vec{x}} = \norm{\vec{x}}$.
+
+    \begin{proof}
+        $\norm{\mathscr{A}\vec{x}} = \sqrt{(\mathscr{A}\vec{x}, \mathscr{A}\vec{x})} = \sqrt{(\vec{x}, \vec{x})} = \norm{\vec{x}}$.
+    \end{proof}
+
+    \item Сохраняет углы между ненулевыми векторами.
+
+    \begin{proof}
+        $\widehat{(\mathscr{A}\vec{x}, \mathscr{A}\vec{y})} = \arccos \frac{(\mathscr{A}\vec{x}, \mathscr{A}\vec{y})}{\norm{\mathscr{A}\vec{x}}\cdot\norm{\mathscr{A}\vec{y}}} = \arccos \frac{(\vec{x}, \vec{y})}{\norm{\vec{x}}\cdot\norm{\vec{y}}} = \widehat{(\vec{x}, \vec{y})}$.
+    \end{proof}
+
+    \item Пусть $\mathscr{A} \colon \mathcal{E} \to \mathcal{E}$ - ортогональный оператор, $\vec{e}_1, \ldots, \vec{e}_n$ - ОНБ в $\mathcal{E}$. Тогда $\mathscr{A}\vec{e}_1, \ldots, \mathscr{A}\vec{e}_n$ - ОНБ в $\mathcal{E}$.
+
+    \begin{proof}~
+    
+        $(\mathscr{A}\vec{e}_i, \mathscr{A}\vec{e}_j) = (\vec{e}_i, \vec{e}_j) = \delta_{ij} \text{ (символ Кронекера)}$.
+
+        $\norm{\mathscr{A}\vec{e}_i} = 1$; $\mathscr{A}\vec{e}_1, \ldots, \mathscr{A}\vec{e}_n$ попарно ортогональны, а значит, ЛНЗ. К тому же, $\dim \mathcal{E} = n$, а $\mathscr{A}\vec{e}_1, \ldots, \mathscr{A}\vec{e}_n$ - тоже $n$. Значит, $\mathscr{A}\vec{e}_1, \ldots, \mathscr{A}\vec{e}_n$ - ОНБ.
+    \end{proof}
+
+    \item Пусть 
+    
+    \begin{itemize}
+        \item $\mathcal{E}$ - $n$-мерное евклидово пространство;
+        \item $\vec{e}_1, \ldots, \vec{e}_n$ - некоторый ОНБ $\mathcal{E}$;
+        \item $\mathscr{A} \colon \mathcal{E} \to \mathcal{E}$ - некоторый линейный оператор.
+        \item $\mathscr{A}\vec{e}_1, \ldots, \mathscr{A}\vec{e}_n$ - тоже ОНБ $\mathcal{E}$.
+    \end{itemize}
+
+    Тогда $\mathscr{A}$ - ортогональный оператор.
+
+    \begin{proof}~
+    
+        Требуется доказать, что
+
+        $$\forall \vec{x}, \vec{y} \in \mathcal{E} \colon (\mathscr{A}\vec{x}, \mathscr{A}\vec{y}) = (\vec{x}, \vec{y}).$$
+
+        Возьмем произвольные $\vec{x}, \vec{y} \in \mathcal{E}$.
+
+        Разложим по базису $\vec{e}_1, \ldots, \vec{e}_n$:
+
+        \begin{gather*}
+            \vec{x} = x_1\vec{e}_1 + \ldots + x_n\vec{e}_n \\
+            \vec{y} = y_1\vec{e}_1 + \ldots + y_n\vec{e}_n
+        \end{gather*}
+
+        Найдем:
+
+        \begin{align*}
+            (\mathscr{A}\vec{x}, \mathscr{A}\vec{y}) &= (\mathscr{A}(x_1\vec{e}_1 + \ldots + x_n\vec{e}_n), \mathscr{A}(y_1\vec{e}_1 + \ldots + y_n\vec{e}_n)) = \\
+            &= (x_1\cdot\mathscr{A}\vec{e}_1 + \ldots + x_n\cdot\mathscr{A}\vec{e}_n, y_1\cdot\mathscr{A}\vec{e}_1 + \ldots + y_n\cdot\mathscr{A}\vec{e}_n) = \\
+            &= \left\{ 
+            \begin{array}{l}
+                \text{Получилось, что} \\
+                \text{у вектора } \mathscr{A}\vec{x} \\
+                \text{в базисе } \mathscr{A}\vec{e}_1, \ldots, \mathscr{A}\vec{e}_n \\
+                \text{координаты } \begin{pmatrix}
+                    x_1 \\
+                    \vdots \\
+                    x_n
+                \end{pmatrix}; \\
+                \text{у вектора } \vec{y} \text{ аналогично}.
+            \end{array} \right\} \underbrace{=}_{\text{Следствие } \ref{corollary:corollary_1}} \\
+            &\underbrace{=}_{\text{Следствие } \ref{corollary:corollary_1}} x_1y_1 + \ldots + x_ny_n = (\vec{x}, \vec{y}).
+        \end{align*}
+    \end{proof}
+
+    \item Пусть 
+    
+    \begin{itemize}
+        \item $\mathcal{E}$ - $n$-мерное евклидово пространство;
+        \item $\vec{e}_1, \ldots, \vec{e}_n$ - некоторый ОНБ $\mathcal{E}$;
+        \item $\mathscr{A} \colon \mathcal{E} \to \mathcal{E}$ - ортогональный оператор.
+    \end{itemize}
+
+    Тогда матрица $A_e$ линейного оператора $\mathscr{A}$ в базисе $\vec{e}_1, \ldots, \vec{e}_n$ - ортогональная.
+
+    \begin{proof}~
+    
+        \begin{align*}
+            (\mathscr{A}\vec{x}, \mathscr{A}\vec{y}) &\underbrace{=}_{\text{Лемма } \ref{lemma:lemma_1}} (\mathscr{A}\vec{x})^T_e\cdot\Gamma_e\cdot(\mathscr{A}\vec{y})_e = \\
+            &= (A_e\vec{x}_e)^T\cdot\Gamma_e\cdot(A_e\vec{y}_e) = \\
+            &= \vec{x}^T\cdot A^T_e\Gamma_eA_e\vec{y}_e.
+        \end{align*}
+
+        При этом
+
+        $$(\vec{x}, \vec{y}) = \vec{x}^T_e\cdot\Gamma_e\cdot\vec{y}_e.$$
+
+        Из этого ясно, что 
+        $$A^T_e\Gamma_eA_e = \Gamma_e.$$
+
+        Так как $e$ - ОНБ, то $\Gamma_e = E \in \RR^{n \times n}$.
+
+        И тогда $A^T_e \cdot A_e = E$.
+    \end{proof}
+
+    \item Справедлив и обратный факт свойству 6:
+
+    Если линейный оператор $\mathscr{A} \colon \mathcal{E} \to \mathcal{E}$ в ОНБ $\vec{e}_1, \ldots, \vec{e}_n$ имеет ортогональную матрицу, то $\mathscr{A}$ задает ортогональное преобразование.
+
+    \begin{proof}~
+    
+        Действительно, 
+
+        \begin{align*}
+            (\mathscr{A}\vec{x}, \mathscr{A}\vec{y}) &\underbrace{=}_{\text{Лемма } \ref{lemma:lemma_1}} (\mathscr{A}\vec{x})^T_e\cdot\Gamma_e\cdot(\mathscr{A}\vec{y})_e = \\
+            &= (A_e\vec{x}_e)^T\cdot E\cdot(A_e\vec{y}_e) = \\
+            &= \vec{x}^T\cdot \underbrace{A^T_eA_e}_{ E}\vec{y}_e = \\
+            &= \vec{x}^T\vec{y}_e = \\
+            &= (\vec{x}, \vec{y}).
+        \end{align*}
+    \end{proof}
+\end{enumerate}

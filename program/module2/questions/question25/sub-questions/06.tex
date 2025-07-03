@@ -1,0 +1,43 @@
+\subsection{
+    Жорданова нормальная форма.
+}
+
+Для произвольного действительного числа $\mu$ введем обозначение матрицы порядка $s$:
+
+$$J_s(\mu) = \begin{pmatrix} 
+    \mu & 1 & 0 & \ldots & 0 & 0 \\
+    0 & \mu & 1 & \ldots & 0 & 0 \\
+    \hdotsfor6 \\
+    0 & 0 & 0 & \ldots & \mu & 1 \\
+    0 & 0 & 0 & \ldots & 0 & \mu
+\end{pmatrix}$$
+
+Для любого комплексного числа $\lambda = \alpha + i\beta (\beta \ne 0)$ введем обозначение блочной матрицы порядка $2r$:
+
+$$C_r(\alpha, \beta) = \begin{pmatrix} 
+    C(\alpha, \beta) & E & 0 & \ldots & 0 & 0 \\
+    0 & C(\alpha, \beta) & E & \ldots & 0 & 0 \\
+    \hdotsfor6 \\
+    0 & 0 & 0 & \ldots & C(\alpha, \beta) & E \\
+    0 & 0 & 0 & \ldots & 0 & C(\alpha, \beta)
+\end{pmatrix},$$
+
+где $C(\alpha, \beta) = \begin{pmatrix} 
+    \alpha & \beta \\
+    -\beta & \alpha
+\end{pmatrix}$. Все остальные блоки также являются квадратными матрицами порядка 2, где $E$ - единичная матрица, 0 - нулевая.
+
+Блочно-диагональную матрицу вида
+
+\[
+A = \begin{pmatrix}
+    C_{r_1}(\alpha_1, \beta_1) &        &        &        &  \\
+                               & \ddots &        &        & \scaleobj{4}{0}   \\
+                               &        & C_{r_m}(\alpha_m, \beta_m) &        &   \\
+                               &        &        & J_{s_1}(\mu_1) &   \\
+                               & \scaleobj{4}{0} &        &     & \ddots  &  \\
+                               &        &        &        & &J_{s_k}(\mu_k)
+\end{pmatrix},
+\]
+
+где $\alpha_j, \beta_j (j = \overline{1, m})$ и $\mu_l (l = \overline{1, k})$ - действительные числа, называют \textbf{\textit{жордановой}}, ее диагональные блоки - \textbf{\textit{жордановыми клетками}}. Жорданову матрицу $A'$, подобную данной матрице $A$, называют \textbf{\textit{жордановой нормальной формой}} матрицы $A$.

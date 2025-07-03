@@ -1,0 +1,59 @@
+\subsection{
+    Понятие нормы, способы задания норм (привести три примера). 
+}
+
+\begin{definition}
+    Функция, заданная на линейном пространстве $\mathcal{V}$, которая каждому вектору ставит в соответствие вещественное число, называется \textbf{\textit{нормой}}, если выполнены 3 аксиомы:
+    \begin{enumerate}[nosep]
+        \item $\norm{\vec{x}} \geq 0$, причем $\norm{\vec{x}} = 0 \iff \vec{x} = \vec{0}$;
+        \item $\norm{\lambda \vec{x}} = |\lambda| \cdot  \norm{\vec{x}}, \thinspace \lambda \in \RR$;
+        \item $\norm{\vec{x} + \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}$ (неравенство треугольника).
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Линейное пространство с заданной нормой называется \textbf{\textit{нормированным}}.
+\end{definition}
+
+\begin{theorem}
+    Всякое скалярное произведение в евклидовом пространстве определяет норму $\norm{\vec{x}} = \sqrt{(\vec{x}, \vec{x})}$.
+\end{theorem}
+
+\begin{proof}~
+
+    Проверим норму с помощью трех аксиом:
+    \begin{enumerate}[nosep]
+        \item $(\vec{x}, \vec{x}) \geq 0 \implies$ заданная функция определена для любого вектора $\vec{x}$ евклидова пространства.
+        \item $\norm{\lambda \vec{x}} = \sqrt{(\lambda \vec{x}, \lambda \vec{x})} = \sqrt{\lambda^2(\vec{x}, \vec{x})} = \sqrt{\lambda^2}\sqrt{(\vec{x}, \vec{x})} = |\lambda| \cdot \norm{\vec{x}}$.
+        \item Воспользуемся неравенством Коши-Буняковского: 
+
+        \begin{gather*}
+            (\vec{x}, \vec{y}) \leq \sqrt{(\vec{x}, \vec{x})}\cdot\sqrt{(\vec{y}, \vec{y})} \\
+            (\vec{x}, \vec{y}) \leq \norm{\vec{x}} \cdot \norm{\vec{y}}.
+        \end{gather*}
+        
+        Используя это неравенство, получаем:
+
+        \begin{align*}
+            &\norm{\vec{x} + \vec{y}} ^2 = (\vec{x} + \vec{y}, \vec{x} + \vec{y}) = \\
+            &= (\vec{x}, \vec{x}) + 2(\vec{x}, \vec{y}) + (\vec{y}, \vec{y}) \leq (\vec{x}, \vec{x}) + 2 \norm{\vec{x}} \cdot \norm{\vec{y}} + (\vec{y}, \vec{y}) = \\
+            &= (\norm{\vec{x}} + \norm{\vec{y}})^2 \implies \norm{\vec{x} + \vec{y}} \leq \norm{\vec{x}} + \norm{\vec{y}}.
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\subsubsection*{
+    Способы задания норм (привести три примера).
+}
+
+\begin{definition}
+    Норма вида $\norm{\vec{x}}_2 = \sqrt{(\vec{x}, \vec{x})}$ называется \textbf{\textit{евклидовой}} $(l_2)$
+\end{definition}
+
+\begin{definition}
+    Норма вида $\norm{\vec{x}}_1 = |x_1| + \dots + |x_n|$ называется \textbf{\textit{октаэдрической}} $(l_1)$
+\end{definition}
+
+\begin{definition}
+    Норма вида $\norm{\vec{x}}_{\infty} = max\{|x_1|, \dots, |x_n|\}$ называется \textbf{\textit{кубической}} $(l_{\infty})$
+\end{definition}
