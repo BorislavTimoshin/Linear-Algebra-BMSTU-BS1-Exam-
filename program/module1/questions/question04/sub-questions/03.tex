@@ -1,0 +1,21 @@
+\subsection{
+    Нахождение базисов для суммы и пересечения подпространств.
+}
+
+\begin{theorem}
+    Если $\{e\}$ - базис $\mathcal{L}_1$, $\{f\}$ - базис $\mathcal{L}_2$, $\ldots$, $\{g\}$ - базис $\mathcal{L}_k$, то $\sum_{j=1}^{k} L_j = span(e, f, \ldots, g)$.
+\end{theorem}
+
+\begin{proof}
+    $\vec{x} = \underbrace{\vec{x_1}}_{\text{расклад. по $e$}} + \underbrace{\vec{x_2}}_{\text{расклад. по $f$}} + \ldots + \underbrace{\vec{x_k}}_{\text{расклад. по $g$}}$
+\end{proof}
+
+\begin{comment}
+    Набор $(e, f, \ldots, g)$ может быть избыточен; нужны только ЛНЗ векторы.
+\end{comment}
+
+\begin{proposition}
+    $\dim \sum_{j=1}^{k} \mathcal{L}_j = rank(e, f, \ldots, g)$.
+\end{proposition}
+
+Пусть $\mathcal{L}_1, \mathcal{L}_2, \ldots, \mathcal{L}_k$ заданы с помощью СЛАУ. Базисом суммы подпространств $\mathcal{L}_1 + \mathcal{L}_2 + \ldots + \mathcal{L}_k$ будет любая её ФСР. Базисом пересечения подпространств $\mathcal{L}_1 \cap \mathcal{L}_2 \cap \ldots \cap \mathcal{L}_k$ будет любая его ФСР.

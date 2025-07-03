@@ -1,0 +1,57 @@
+\begin{definition}
+    Сумма линейных подпространств $\mathcal{H}_1, \mathcal{H}_2, \ldots, \mathcal{H}_j$ данного пространства $\mathcal{H}$ называется \textbf{\textit{прямой суммой}}, если представление любого ее вектора $\vec{x} = \vec{x}_1 + \vec{x}_2 + \ldots + \vec{x}_j, \vec{x}_j \in \mathcal{H}_j$ - единственно.
+\end{definition}
+
+\begin{designation}
+    $\mathcal{H}_1 \oplus \mathcal{H}_2 \oplus \ldots \oplus \mathcal{H}_j = \mathcal{H}$.
+\end{designation}
+
+\begin{theorem}[Критерий прямой суммы]
+    Для линейных подпространств $\mathcal{L}_1, \ldots, \mathcal{L}_k$ конечномерного пространства $\mathcal{L}$ следующие утверждения равносильны:
+    \begin{enumerate}
+        \item Сумма $\mathcal{L}_1, \ldots, \mathcal{L}_k$ - прямая.
+        \item Совокупность их базисов линейно независима.
+        \item Совокупность базисов образует базис суммы.
+        \item Размерность суммы равна сумме размерностей $\mathcal{L}_j$.
+        \item В сумме существует хотя бы один вектор с единственным разложением по подпространством.
+        \item Произвольная система $\vec{x}_j \in \mathcal{L}_j$, взятых по одному из любого $\mathcal{L}_j$, линейно независима.
+        \item Только для $k = 2$, т.е. $\mathcal{L}_1$ и $\mathcal{L}_2$, $\mathcal{L}_1 \cap \mathcal{L}_2 = \vec{0}$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}~
+
+    $1 \to 2$: Предположим, что линейно зависима $\Rightarrow$ разложение не единственно, т.е. $\vec{0} = \alpha_1(\vec{x}_1 - \vec{x}_1') + \ldots + \alpha_n(\vec{x}_n - \vec{x}_n')$, что противоречит определению прямой суммы.
+
+    \bigbreak
+
+    $2 \to 3$: Совокупность базисов линейно независима и каждый вектор имеет единственное разложение, то есть совокупность базисов является базисом.
+
+    \bigbreak
+
+    $3 \to 4$: суммируем базисы $\dim \Sigma \mathcal{L}_j = \Sigma \dim \mathcal{L}_j$.
+
+    \bigbreak
+
+    $4 \to 5$: От противного $\Rightarrow$ линейная зависимость векторов базиса.
+
+    \bigbreak
+
+    $5 \to 6$: $\vec{x} = \vec{x}_1 + \ldots + \vec{x}_k$, предположим линейную зависимость, т.е. $\alpha_1\vec{x}_1 + \ldots + \alpha_k\vec{x}_k = \vec{0}$
+
+    $\vec{x} + \vec{0} = \vec{x}$ - не единственное.
+
+    \bigbreak
+
+    $6 \to 1$: $\vec{x}_1,\ldots,\vec{x}_k$ линейно независима $\Rightarrow$ сумма подпространств $\mathcal{L}_1, \ldots, \mathcal{L}_k$ прямая. Предположим обратное. 
+
+    $\vec{x} = \alpha_1\vec{x}_1 + \ldots + \alpha_k\vec{x}_k$,
+    
+    $\vec{x} = \beta_1\vec{x}_1 + \ldots + \beta_k\vec{x}_k$
+
+    То есть $\vec{x}_1,\ldots,\vec{x}_k$ линейно зависимы - противоречие.
+
+    \bigbreak
+
+    $7\leftrightarrow 4$: значит, $\dim \mathcal{L}_1 \cap \mathcal{L}_2 = \vec{0}$.
+\end{proof}

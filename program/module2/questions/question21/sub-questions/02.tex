@@ -1,0 +1,19 @@
+\subsection{
+    Матрица линейного оператора.
+}
+
+Пусть $\mathcal{V}$ и $\mathcal{W}$ - два линейных пространства.
+
+Пусть $e = (\vec{e_1}, \ldots, \vec{e_n})$ - некоторый базис в $\mathcal{V}$, $f = (\vec{f_1}, \ldots, \vec{f_m})$ - некоторый базис в $\mathcal{W}$. 
+
+Тогда $\mathscr{A}\vec{e_1}, \ldots, \mathscr{A}\vec{e_n}$ - это некоторые векторы в $\mathcal{W}$; значит, их можно, причем единственным образом, разложить по базису $\vec{f_1}, \ldots, \vec{f_m}$:
+
+$$\mathscr{A}\vec{e_1} = a_{11}\vec{f_1} + \ldots + a_{m1}\vec{f_m}$$
+$$\ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots$$
+$$\mathscr{A}\vec{e_n} = a_{1n}\vec{f_1} + \ldots + a_{mn}\vec{f_m},$$
+
+где $(a_{ij} \in \PP)$.
+
+\begin{definition}
+    Матрицу, составленную из координатных столбцов векторов $\mathscr{A}\vec{e_1}, \ldots, \mathscr{A}\vec{e_n}$ в базисе $f = (\vec{f_1}, \ldots, \vec{f_m})$, называют \textit{\textbf{матрицей линейного оператора}} $\mathscr{A}$ в базисе $f$.
+\end{definition}

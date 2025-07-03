@@ -1,0 +1,34 @@
+\subsection{
+    Свойство собственных векторов самосопряженного линейного оператора, отвечающих различным собственным значениям (с доказательством).
+}
+
+\begin{theorem}
+    Собственные векторы самосопряженного оператора, отвечающие различным собственным значениям, ортогональны.
+\end{theorem}
+
+\begin{proof}~
+
+    Рассмотрим самосопряженный оператор $\mathscr{A}$ и два его собственных вектора $\vec{x}_1$ и $\vec{x}_2$, отвечающие различным собственным значениям $\lambda_1$ и $\lambda_2$. Тогда $\mathscr{A}\vec{x}_1 = \lambda_1\vec{x}_1$ и $\mathscr{A}\vec{x}_2 = \lambda_2\vec{x}_2$. Поэтому
+
+    \begin{equation}
+        (\mathscr{A}\vec{x}_1, \vec{x}_2) = (\lambda_1\vec{x}_1, \vec{x}_2) = \lambda_1(\vec{x}_1, \vec{x}_2).
+        \label{eq:equation_32_1}
+    \end{equation}
+
+    Но так как $\mathscr{A}$ является самосопряженным оператором, то $(\mathscr{A}\vec{x}_1, \vec{x}_2) = (\vec{x}_1, \mathscr{A}\vec{x}_2)$. Значит,
+
+    \begin{equation}
+        (\mathscr{A}\vec{x}_1, \vec{x}_2) = (\vec{x}_1, \mathscr{A}\vec{x_2}) = (\vec{x}_1, \lambda_2\vec{x}_2) = \lambda_2(\vec{x}_1, \vec{x}_2).
+        \label{eq:equation_32_2}
+    \end{equation}
+
+    Приравнивая правые части соотношений \eqref{eq:equation_32_1} и \eqref{eq:equation_32_2}, получаем
+
+    $$\lambda_1(\vec{x}_1, \vec{x}_2) = \lambda_2(\vec{x}_1, \vec{x}_2),$$
+
+    или
+
+    $$(\lambda_1 - \lambda_2)(\vec{x}_1, \vec{x}_2) = 0.$$
+
+    Так как $\lambda_1 \ne \lambda_2$, $(\vec{x}_1, \vec{x}_2) = 0$, что и означает ортогональность векторов $\vec{x}_1$ и $\vec{x}_2$.
+\end{proof}

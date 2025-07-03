@@ -1,0 +1,74 @@
+\subsection{
+    Теорема о размерностях подпространств, суммы и пересечения.
+}
+
+\begin{theorem}
+    Если $\mathcal{H}$ - линейное подпространство линейного пространства $\mathcal{L}$, то $\dim \mathcal{H} \leq \dim \mathcal{L}$. Если к тому же $\mathcal{H} \ne \mathcal{L}$, то $\dim \mathcal{H} < \dim \mathcal{L}$.
+\end{theorem}
+
+\begin{proof}~
+
+    Любой базис линейного подпространства $\mathcal{H}$ является ЛНЗ системой векторов в линейном пространстве $\mathcal{L}$. Если этот базис из $\mathcal{H}$ является базисом и в $\mathcal{L}$, то согласно теореме \eqref{thm:theorem_2_2}, $\dim \mathcal{H} = \dim \mathcal{L}$ и ясно, что в этом случае $\mathcal{H} = \mathcal{L}$, так как у них общий базис. Если базис $\mathcal{H}$ не является базисом $\mathcal{L}$, то $\exists \vec{x} \in \mathcal{L}$, который не является линейной комбинацией векторов этого базиса $\implies \mathcal{H} \ne \mathcal{L}$. Добавив вектор $x$ к векторам базиса, получим ЛНЗ систему векторов. Значит, в $\mathcal{L}$ больше ЛНЗ векторов, чем в $\mathcal{H} \implies \dim \mathcal{H} < \dim \mathcal{L}$.
+\end{proof}
+
+\begin{theorem}
+    Если $\mathcal{H}_1$ и $\mathcal{H}_2$ - линейные подпространства линейного пространства $\mathcal{L}$, то
+    $$\dim(\mathcal{H}_1 + \mathcal{H}_2) = \dim\mathcal{H}_1 + \dim\mathcal{H}_2 - \dim(\mathcal{H}_1 \cap \mathcal{H}_2).$$
+    \label{thm:theorem_4_6}
+\end{theorem}
+
+\begin{proof}~
+
+    В линейном подпространстве $\mathcal{H}_1 \cap \mathcal{H}_2$ выберем некоторый базис $\vec{e} = (\vec{e_1}, \ldots, \vec{e_m})$. Множество $\mathcal{H}_1 \cap \mathcal{H}_2$ является линейным подпространством не только в $\mathcal{L}$, но и в его части $\mathcal{H}_1$. Поэтому выбранный базис можно дополнить некоторой системой векторов $f = (\vec{f_1}, \ldots, \vec{f_l})$ до базиса $(e, f)$ в линейном подпространстве $\mathcal{H}_1$. Аналогично систему $e$ можно дополнить некоторым набором векторов $g = (\vec{g_1}, \ldots, \vec{g_k})$ до базиса $(e, g)$ в $\mathcal{H}_2$. Докажем, что система векторов
+    $$(e, f, g) = (\vec{e_1}, \ldots, \vec{e_m}, \vec{f_1}, \ldots, \vec{f_l}, \vec{g_1}, \ldots, \vec{g_k})$$
+    является базисом в линейном пространстве $\mathcal{H}_1 + \mathcal{H}_2$.
+
+    \textbf{Во-первых}, установим, что указанная система линейно независима. Пусть имеет место равенство
+    $$\alpha_1\vec{e_1} + \ldots + \alpha_m\vec{e_m} + \beta_1\vec{f_1} + \ldots + \beta_l\vec{f_l} + \gamma_1\vec{g_1} + \ldots \gamma_k\vec{g_k} = \vec{0}$$
+    Тогда для вектора
+    \begin{equation}
+        \vec{y} = \beta_1\vec{f_1} + \ldots + \beta_l\vec{f_l}.
+        \label{eq:theorem_4_6_1}
+    \end{equation}
+    выполнено равенство
+    \begin{equation}
+        \vec{y} = -\alpha_1\vec{e_1} - \ldots -\alpha_m\vec{e_m} - \gamma_1\vec{g_1} - \ldots - \gamma_k\vec{g_k}.
+        \label{eq:theorem_4_6_2}
+    \end{equation}
+    Согласно равенству \eqref{eq:theorem_4_6_1} заключаем, что $\vec{y} \in \mathcal{H}_1$, а согласно \eqref{eq:theorem_4_6_2} делаем вывод, что $\vec{y} \in \mathcal{H}_2$. Следовательно, $\vec{y} \in \mathcal{H}_1 \cap \mathcal{H}_2$ и потому имеет единственное разложение
+    \begin{equation}
+        \vec{y} = \delta_1\vec{e_1} + \ldots + \delta_m\vec{e_m}.
+        \label{fig:theorem_4_6_3}
+    \end{equation}
+    по базису $e$ линейного пространства $\mathcal{H}_1 \cap \mathcal{H}_2$.
+
+    Рассмотрев разложение по $(e, g)$ и $(e, f)$, получим, что все коэффициенты равны нулю. Значит, система векторов $(e, f, g)$ линейно независима.
+
+    \textbf{Во-вторых}, всякий вектор $\vec{y} \in \mathcal{H}_1 + \mathcal{H}_2$ есть линейная комбинация системы векторов $(e, f, g)$. Действительно, такой вектор представим в виде $\vec{y} = \vec{y_1} + \vec{y_2}$, где $\vec{y_1} \in \mathcal{H}_1$, $\vec{y_2} \in \mathcal{H}_2$. Вектор $\vec{y_1}$ представляется линейной комбинацией системы векторов $(e, f)$, а $\vec{y_2}$ - линейной комбинацией системы векторов $(e, g)$. Поэтому $\vec{y}$ разлагается по системе векторов $(e, f, g)$.
+
+    Итак, система векторов $(e, f, g)$ линейно независима и любой вектор из $\mathcal{H}_1 + \mathcal{H}_2$ разлагается по этой системе. Следовательно, $(e, f, g)$ - базис $\mathcal{H}_1 + \mathcal{H}_2$. Остается подсчитать размерности:
+    
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Линейное подпространство & базис & размерность\\
+            \hline
+            $\mathcal{H}_1$ & $(e, f)$ & $m + l$\\
+            \hline
+            $\mathcal{H}_2$ & $(e, g)$ & $m + k$\\
+            \hline
+            $\mathcal{H}_1 \cap \mathcal{H}_2$ & $e$ & $m$\\
+            \hline
+            $\mathcal{H}_1 + \mathcal{H}_2$ & $(e, f, g)$ & $m + l + k$\\
+            \hline
+        \end{tabular}
+        \label{tab:my_label}
+    \end{table}
+    Таким образом, получаем утверждение теоремы.
+\end{proof}
+
+\begin{corollary}
+    $\dim(\mathcal{H}_1 \oplus \mathcal{H}_2) = \dim \mathcal{H}_1 + \dim \mathcal{H}_2.$
+    \label{cor:corollary_4_6}
+\end{corollary}

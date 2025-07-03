@@ -1,0 +1,20 @@
+\subsection{
+    Матрица Грама для системы векторов.
+}
+    
+\begin{definition}
+    Пусть даны векторы \( \vec{x}_1, \vec{x}_2, \dots, \vec{x}_m \) в некотором евклидовом пространстве. \textit{\textbf{Матрицей Грама}} этой системы называется квадратная матрица \( \Gamma \) размера \( m \times m \), элементы которой задаются скалярными произведениями:
+
+    \[
+    \Gamma = \begin{pmatrix}
+    (\vec{x}_1, \vec{x}_1) & (\vec{x}_1, \vec{x}_2) & \cdots & (\vec{x}_1, \vec{x}_m) \\
+    (\vec{x}_2, \vec{x}_1) & (\vec{x}_2, \vec{x}_2) & \cdots & (\vec{x}_2, \vec{x}_m) \\
+    \vdots     & \vdots     & \ddots & \vdots     \\
+    (\vec{x}_m, \vec{x}_1) & (\vec{x}_m, \vec{x}_2) & \cdots & (\vec{x}_m, \vec{x}_m)
+    \end{pmatrix},
+    \]
+    
+    где \( (\vec{x}_i, \vec{x}_j) \) обозначает скалярное произведение векторов \( \vec{x}_i \) и \( \vec{x}_j \).
+\end{definition}
+
+Её определитель называется определителем Грама (или \textbf{\textit{грамианом}}).

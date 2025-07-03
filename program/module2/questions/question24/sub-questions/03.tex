@@ -1,0 +1,30 @@
+\subsection{
+    Линейное пространство линейных операторов.
+}
+
+\begin{definition}
+    Линейное пространство $\mathcal{L}(\mathcal{V}, \mathcal{W})$ линейных операторов из линейного пространства $\mathcal{V}$ в линейное пространство $\mathcal{W}$ называют \textbf{\textit{линейным пространством линейных операторов}}.
+\end{definition}
+
+\begin{proof}[Проверка на линейность пространства $\mathcal{L}$]~
+
+    Пусть даны линейные операторы $\mathscr{A}б \mathscr{B} \in \mathcal{L}(\mathcal{V}, \mathcal{W})$. 
+
+    Поскольку
+    \begin{align*}
+        (\mathscr{A} + &\mathscr{B})(\alpha\vec{x} + \beta \vec{y}) = \mathscr{A}(\alpha\vec{x} + \beta \vec{y}) + \mathscr{B}(\alpha\vec{x} + \beta \vec{y}) = \\
+        &= (\alpha\mathscr{A}\vec{x} + \beta\mathscr{A}\vec{y}) + (\alpha\mathscr{B}\vec{x} + \beta\mathscr{B}\vec{y}) = \\
+        &= \alpha(\mathscr{A}\vec{x} + \mathscr{B}\vec{x}) + \beta(\mathscr{A}\vec{y} + \mathscr{B}\vec{y}) = \\
+        &= \alpha(\mathscr{A} + \mathscr{B})\vec{x} + \beta(\mathscr{A} + \mathscr{B})\vec{y}
+    \end{align*}
+
+    и
+
+    \begin{align*}
+        (\lambda\mathscr{A})&(\alpha\vec{x} + \beta \vec{y}) = \lambda(\mathscr{A}(\alpha\vec{x} + \beta\vec{y})) = \lambda (\mathscr{A}(\alpha\vec{x}) + \mathscr{A}(\beta\vec{y})) = \\ 
+        &= (\alpha \lambda)\mathscr{A}\vec{x} + (\beta \lambda)\mathscr{A}\vec{y} = \alpha(\lambda \mathscr{A}\vec{x}) + \beta(\lambda \mathscr{A}\vec{y}) = \\
+        &= \alpha((\lambda\mathscr{A})\vec{x}) + \beta((\lambda\mathscr{A})\vec{y})
+    \end{align*}
+
+    отображения $\mathscr{A} + \mathscr{B}$ и $\lambda \mathscr{A}$ действительно являются линейными операторами. Таким образом, относительно введенных нами операций множество $\mathcal{L}(\mathcal{V}, \mathcal{W})$ замкнуто. Проверив аксиомы линейного пространства, можно убедиться, что $\mathcal{L}(\mathcal{V}, \mathcal{W})$ относительно этих операций является линейным пространством.
+\end{proof}

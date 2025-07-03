@@ -1,0 +1,27 @@
+\subsection{
+    Теоремы о СЛАУ, которые являются следствиями из теорем Фредгольма.
+}
+
+\begin{theorem} Пусть 
+    \begin{enumerate}
+        \item $A \in \RR^{n \times m}$ - некоторая матрица;
+        \item $A^* \in \RR^{m \times n}$ - сопряженная к ней.
+    \end{enumerate}
+
+    Тогда справедливо ровно одно из следующих двух утверждений:
+
+    \begin{itemize}
+        \item либо СЛАУ $A\vec{x} = \vec{b}$ имеет решение при любом $\vec{b} \in \RR^n$, 
+        \item ОСЛАУ $A^*\vec{y} = \vec{0}$ имеет нетривиальное решение $\vec{y} = \vec{y}_0 \in \RR^m$.
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem} Пусть
+    \begin{enumerate}
+        \item $A \in \RR^{n \times m}$ - некоторая матрица;
+        \item $A^* \in \RR^{m \times n}$ - сопряженная к ней;
+        \item $\vec{b} \in \RR^{m}$ - заданный вектор-столбец.
+    \end{enumerate}
+
+    Тогда СЛАУ $A\vec{x} = \vec{b}$ совместна $\iff$ вектор $\vec{b}$ ортогонален всем решениям ОСЛАУ $A^*\vec{y} = \vec{0}$.
+\end{theorem}

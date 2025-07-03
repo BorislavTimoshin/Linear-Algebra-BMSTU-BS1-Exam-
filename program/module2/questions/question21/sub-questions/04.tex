@@ -1,0 +1,19 @@
+\subsection{
+    Произведение линейных операторов. Матрица для произведения линейных операторов.
+}
+
+\begin{definition}
+    \textbf{\textit{Произведением операторов}} $\mathscr{A} \colon \mathcal{V} \to \mathcal{W}$ и $\mathscr{B} \colon \mathcal{L} \to \mathcal{V}$ называется оператор $(\mathscr{A}\mathscr{B}) \colon \mathcal{L} \to \mathcal{W}$, действующий по правилу $(\mathscr{A}\mathscr{B})\vec{x} = \mathscr{A}(\mathscr{B}\vec{x}), \forall \vec{x} \in \mathcal{L}$. 
+    
+    Этот оператор является линейным, так как $\forall \vec{x}, \vec{y} \in \mathcal{L},\thinspace \thinspace \forall \lambda, \mu \in \RR$:
+
+    $$(\mathscr{A}\mathscr{B})(\lambda\vec{x} + \mu\vec{y}) = \mathscr{A}(\mathscr{B}(\lambda\vec{x} + \mu\vec{y})) = \mathscr{A}(\lambda\mathscr{B}\vec{x} + \mu\mathscr{B}\vec{y}) = \lambda\mathscr{A}(\mathscr{B}\vec{x}) + \mu\mathscr{A}(\mathscr{B}\vec{y}) = \lambda(\mathscr{A}\mathscr{B})\vec{x} + \mu(\mathscr{A}\mathscr{B})\vec{y}.$$
+\end{definition}
+
+\begin{theorem}
+    Пусть в линейном пространстве $\mathcal{L}$ действуют линейные операторы $\mathscr{A}$ и $\mathscr{B}$, а $A_b$ и $B_b$ - матрицы этих линейных операторов в некотором базисе $b$. Тогда матрицей линейного оператора $\mathscr{B}\mathscr{A}$ в том же базисе $b$ является матрица $B_bA_b$.
+\end{theorem}
+
+\begin{proof}
+    $\vec{y} = (\mathscr{B}\mathscr{A})\vec{x} = \mathscr{B}(\mathscr{A}\vec{x}) = \mathscr{B}(bA_bx_b) = b(B_b(A_bx_b)) = b(B_bA_b)x_b.$
+\end{proof}

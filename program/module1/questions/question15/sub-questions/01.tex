@@ -1,0 +1,67 @@
+\begin{definition}
+    Для любой матрицы $A$ существует такая матрица $A^+$, что нормальное псевдорешение СЛАУ $A\vec{x} = \vec{b}$ с произвольным вектор-столбцом $\vec{b}$ имеет вид $\vec{x} = A^+\vec{b}$. Матрицу $A^+$ называют \textit{\textbf{псевдообратной}} по отношению к матрице $A$.
+\end{definition}
+
+\subsection{
+    Алгоритм нахождения, опираясь на нормальное псевдорешение.
+}
+
+Рассмотрим СЛАУ $A\vec{x} = \vec{e}_i$, в правой части которой записан $i$-й вектор стандартного базиса в пространстве $\RR^n$. Ее нормальное псевдорешение $A^+\vec{e}_i$ - это $i$-й столбец псевдообратной матрицы. Вычислив все $n$ столбцов, получим $A^+$. Таким образом, $i$-й столбец псевдообратной матрицы $a_i$ можно найти из системы
+
+\begin{equation*}
+    \left(\begin{array}{c}
+        A^TA \\
+        F^T
+    \end{array}\right)a_i
+    =
+    \left(\begin{array}{c}
+        A^T\vec{e}_i \\
+        \vec{0}
+    \end{array}\right)
+,\end{equation*}
+
+где $F$ - матрица, составленная из столбцов ФСР СЛАУ $A\vec{x} = \vec{0}$. Объединив по правилам действий с блочными матрицами $n$ систем в одно матричное уравнение, получим
+
+\begin{equation*}
+    \left(\begin{array}{c}
+        A^TA \\
+        F^T
+    \end{array}\right)A^+
+    =
+    \left(\begin{array}{c}
+        A^T \\
+        \vec{0}
+    \end{array}\right)
+.\end{equation*}
+
+\textbf{Итак, алгоритм состоит в следующем:}
+
+\begin{enumerate}
+    \item Найти $F$ - матрицу, составленную из столбцов ФСР СЛАУ $A\vec{x} = \vec{0}$.
+    \item Транспонируем матрицу $F$, чтобы в дальнейшем добавить $F^T$ как строки новой матрицы.
+    \item Найдем $A^T$.
+    \item Найдем $A^TA$.
+    \item Составим матричное уравнение ниже и решим его методом элементарных преобразований.
+
+    \begin{equation*}
+        \left(\begin{array}{c}
+            A^TA \\
+            F^T
+        \end{array}\right)A^+
+        =
+        \left(\begin{array}{c}
+            A^T \\
+            \vec{0}
+        \end{array}\right)
+    .\end{equation*}
+    \begin{equation*}
+        \left(\begin{array}{c|c}
+            A^TA & A^T \\
+            F^T & \vec{0}
+        \end{array}\right)
+        \sim \ldots \sim
+        \left(\begin{array}{c|c}
+            E & A^+
+        \end{array}\right)
+    .\end{equation*}
+\end{enumerate}

@@ -1,0 +1,78 @@
+\subsection{
+    Скалярное произведение, примеры (привести три примера). Евклидовы пространства.
+}
+
+\begin{definition}
+    Пусть дано линейное пространство $\mathcal{V} = \{\vec{a}, \vec{b}, \vec{c}, \vec{d}, \dots\}$. Множество вида 
+    
+    $\{(\vec{a}, \vec{a}), (\vec{a}, \vec{b}), (\vec{a}, \vec{c}), (\vec{a}, \vec{d}), \dots, (\vec{b}, \vec{a}), (\vec{b}, \vec{b}), (\vec{b}, \vec{c}), (\vec{b}, \vec{d}), \dots\}$ называется \textbf{\textit{декартовым квадратом}} $\mathcal{V} \times \mathcal{V}$.
+\end{definition}
+
+\begin{definition}
+    Отображение $\mathcal{V} \times \mathcal{V} \to \RR$, где $\mathcal{V}$ - линейное пространство над полем $\RR$, называется \textbf{\textit{скалярным произведением}}, если выполнены 4 аксиомы:
+    \begin{enumerate}[nosep]
+        \item $(\vec{x}, \vec{y}) = (\vec{y}, \vec{x})$.
+        \item $(\vec{x} + \vec{y}, \vec{z}) = (\vec{x}, \vec{z}) + (\vec{y}, \vec{z})$ - аддитивность по первому аргументу.
+        \item $(\alpha \vec{x}, \vec{y}) = \alpha(\vec{x}, \vec{y})$ - однородность по первому аргументу.
+        \item $(\vec{x}, \vec{x}) \geq 0$, причем $(\vec{x}, \vec{x}) = 0 \iff \vec{x} = 0$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Вещественное линейное пространство с так введенным скалярным произведением называется \textbf{\textit{евклидовым пространством}}.
+\end{definition}
+
+\begin{designation}
+    $\mathcal{E}$.
+\end{designation}
+
+\begin{definition}
+    Отображение $\mathcal{V} \times \mathcal{V} \to \CC$, где $\mathcal{V}$ - линейное пространство над полем $\CC$, называется \textbf{\textit{скалярным произведением}}, если выполнены 4 аксиомы:
+    \begin{enumerate}[nosep]
+        \item $(\vec{x}, \vec{y}) = \overline{(\vec{y}, \vec{x})}$.
+        \item $(\vec{x} + \vec{y}, \vec{z}) = (\vec{x}, \vec{z}) + (\vec{y}, \vec{z})$ - аддитивность по первому аргументу.
+        \item $(\alpha \vec{x}, \vec{y}) = \alpha(\vec{x}, \vec{y})$ - однородность по первому аргументу.
+        \item $(\vec{x}, \vec{x}) \geq 0$, причем $(\vec{x}, \vec{x}) = 0 \iff \vec{x} = 0$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Комплексное линейное пространство с так введенным скалярным произведением называется \textbf{\textit{унитарным пространством}}.
+\end{definition}
+
+\begin{designation}
+    $\mathcal{U}$.
+\end{designation}
+
+\begin{example}~
+    \begin{enumerate}[nosep]
+        \item В линейных пространствах $\mathcal{V}_2$ и $\mathcal{V}_3 \colon (\vec{x}, \vec{y}) = |\vec{x}||\vec{y}|\cos \widehat{(\vec{x}, \vec{y})}$.
+        \item В арифметическом линейном пространстве $\RR^n \colon (\vec{x}, \vec{y}) = x_1y_1 + \dots + x_ny_n$. 
+        \item Линейное пространство $C[0, 1]$ всех функций, непрерывных на отрезке $[0, 1]$ становится евклидовым, если в нем ввести скалярное произведение:
+        $$(\vec{f}, \vec{g}) = \int_{0}^{1} f(x)g(x) \dd x.$$
+    \end{enumerate}
+\end{example}
+
+\textbf{Свойства скалярного произведения.}
+
+\begin{enumerate}[label={\arabic*°.}]
+    \item $(\vec{x}, \vec{y} + \vec{z}) = (\vec{x}, \vec{y}) + (\vec{x}, \vec{z}).$
+    
+    $(\vec{x}, \vec{y} + \vec{z}) = (\vec{y} + \vec{z}, \vec{x}) = (\vec{y}, \vec{x}) + (\vec{z}, \vec{x}) = (\vec{x}, \vec{y}) + (\vec{x}, \vec{z}).$
+    
+    \item $(\vec{x}, \lambda \vec{y}) = \overline{\lambda}(\vec{x}, \vec{y}).$
+
+    $(\vec{x}, \lambda \vec{y}) = \overline{(\lambda \vec{y}, \vec{x})} = \overline{\lambda \cdot (\vec{y}, \vec{x})} = \overline{\lambda} \cdot \overline{(\vec{y}, \vec{x})} = \overline{\lambda} (\vec{x}, \vec{y}).$
+    
+    \item $(\vec{x}, \vec{0}) = 0.$
+
+    $(\vec{x}, \vec{0}) = (\vec{x}, 0 \cdot \vec{0}) = \overline{0} \cdot (\vec{x}, \vec{0}) = 0 \cdot (\vec{x}, \vec{0}) = 0.$
+    
+    \item $(\forall \vec{y} \colon(\vec{x}, \vec{y}) = 0 )\implies \vec{x} = \vec{0}.$
+    
+    Возьмем $\vec{y} = \vec{x}$. Тогда $(\vec{x}, \vec{x}) = 0$. Значит, по определению $(\vec{x}, \vec{x}) = 0$.
+    
+    \item Любое подпространство $\mathcal{E}$ ($\mathcal{U}$) само является евклидовым (унитарным).
+    
+    Непосредственная проверка всех аксиом ленейного пространства и скалярного произведения.
+\end{enumerate}

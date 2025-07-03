@@ -1,0 +1,53 @@
+\subsection{
+    Пример решения.
+}
+
+$\vec{a}_1 = \begin{pmatrix} 1 \\ -2 \\ 2 \end{pmatrix}$, $\vec{a}_2 = \begin{pmatrix} 3 \\ 1 \\ -3 \end{pmatrix}$, $\vec{b} = \begin{pmatrix} 16 \\ 6 \\ 4 \end{pmatrix}$
+
+$A = \begin{pmatrix} \vec{a}_1 & \vec{a}_2 \end{pmatrix} = \begin{pmatrix} 1 & 3 \\ -2 & 1 \\ 2 & -3 \end{pmatrix}.$
+
+Найдем элементы матрицы Грама $\Gamma(\vec{a}_1, \vec{a}_2) = A^TA$:
+
+\begin{gather*}
+    (\vec{a}_1, \vec{a}_1) = 1 + 4 + 4 = 9 \\
+    (\vec{a}_1, \vec{a}_2) = 3 - 2 - 6 = -5 \\
+    (\vec{a}_2, \vec{a}_2) = 9 + 1 + 9 = 19
+\end{gather*}
+
+
+Найдем элементы матрицы $A\vec{b}$:
+
+\begin{gather*}
+    (\vec{a}_1, \vec{b}) = 16 - 12 + 8 = 12 \\
+    (\vec{a}_2, \vec{b}) = 48 + 6 - 12 = 42
+\end{gather*}
+
+Найдем решение СЛАУ $A^TA\vec{x} = A\vec{b}$:
+
+\begin{equation*}
+    \left(\begin{array}{cc|c}
+        9 & -5 & 12 \\
+        -5 & 19 & 42
+    \end{array}\right)
+    \sim
+    \left(\begin{array}{cc|c}
+        -1 & 33 & 96 \\
+        0 & -146 & -438
+    \end{array}\right)
+    \sim
+    \left(\begin{array}{cc|c}
+        1 & -33 & -96 \\
+        0 & 1 & 3
+    \end{array}\right)
+    \sim
+    \left(\begin{array}{cc|c}
+        1 & 0 & 3 \\
+        0 & 1 & 3
+    \end{array}\right)
+.\end{equation*}
+
+$\vec{x} = 3\vec{a}_1 + 3\vec{a}_2 = \begin{pmatrix} 12 \\ -3 \\ -3 \end{pmatrix}$ – наилучшее приближение вектора $\vec{b}$.
+
+Абсолютная ошибка $= \norm{\vec{b} - \vec{x}} = \norm{\begin{pmatrix} 16 \\ 6 \\ 4 \end{pmatrix} - \begin{pmatrix} 12 \\ -3 \\ -3 \end{pmatrix}} =  \norm{\begin{pmatrix} 4 \\ 9 \\ 7 \end{pmatrix}} =  \sqrt{146}$.
+
+Относительная ошибка $= \frac{\norm{\vec{b} - \vec{x}}}{\norm{\vec{b}}} = \frac{\sqrt{146}}{\sqrt{308}} = \frac{\sqrt{11242}}{154}$.

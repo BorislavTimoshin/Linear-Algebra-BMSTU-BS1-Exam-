@@ -1,0 +1,69 @@
+Сначала сформулируем и докажем теоремы Фредгольма для операторов в линейных пространствах:
+
+\subsection{
+    Альтернатива Фредгольма.
+}
+
+\begin{theorem}["Альтернатива Фредгольма"] Пусть
+
+    \begin{enumerate}
+        \item $\left.\begin{array}{l}
+            \mathcal{V} \text{ - линейное пространство, } \dim \mathcal{V} = n \\
+            \mathcal{W} \text{ - линейное пространство, } \dim \mathcal{W} = m
+        \end{array}\right\}$ \text{В обоих задано скалярное произведение.}
+        \item $\mathscr{A} \colon \mathcal{V} \to \mathcal{W}$ - линейный оператор.
+    \end{enumerate}
+
+    Тогда справедливо ровно одно из двух:
+
+    \begin{itemize}[nosep]
+        \item либо уравнение $\mathscr{A}\vec{v} = \vec{w}$ имеет решение при любом $\vec{w} \in \mathcal{W}$,
+        \item либо уравнение $\mathscr{A^*}\vec{w} = \vec{0}$ имеет нетривиальное (ненулевое) решение.
+    \end{itemize}
+\end{theorem}
+
+\begin{proof}~
+
+    Обозначим $r = \rank(\mathscr{A})$.
+
+    \textbf{1 случай:}
+    
+    \begin{gather*}
+        r = m \\
+        \downimplies \\
+        \dim(\Im \mathscr{A}) = m \\
+        \downimplies \\
+        \text{Т.к. } \Im \mathscr{A} \text{— } m\text{-мерное подпространство } m\text{-мерного пространства } \mathcal{W}, \text{то } \Im \mathscr{A} = \mathcal{W}. \\
+        \downimplies \\
+        \forall \vec{w} \in \mathcal{W} \exists \vec{v} \in \mathcal{V} \colon \mathscr{A}\vec{v} = \vec{w}. \\
+        \text{Также заметим, что }\dim(\Im \mathscr{A^*}) + \dim(\ker \mathscr{A^*}) = m \\
+        \downimplies \\
+        \dim(\Im \mathscr{A}) + \dim(\ker \mathscr{A^*}) = m \\
+        \downimplies \\
+        m + \dim(\ker \mathscr{A^*}) = m \\
+        \downimplies \\
+        \dim(\ker \mathscr{A^*}) = 0 \\
+        \downimplies \\
+        \ker \mathscr{A^*} = \{\vec{0}\} \\
+        \downimplies \\
+        \text{Уравнение } \mathscr{A^*}\vec{w} = \vec{0} \text{ имеет только тривиальное решение.}
+    \end{gather*}
+
+    Получается, что второе "либо" не выполнено!
+    
+    \textbf{2 случай:}
+
+    \begin{gather*}
+        r < m \\
+        \downimplies \\
+        \dim(\Im \mathscr{A}) < \dim \mathcal{W} \\
+        \downimplies \\
+        \dim(\Im \mathscr{A^*}) < \dim \mathcal{W} \\
+        \downimplies \\
+        \text{Т.к. } \dim(\Im \mathscr{A^*}) + \dim(\ker \mathscr{A^*}) = \dim \mathcal{W}, \ker \mathscr{A^*} \ne \{\vec{0}\} \\
+        \downimplies \\
+        \exists \vec{w} \ne 0 \in \ker \mathscr{A^*} \\
+        \downimplies \\
+        \exists \vec{w} \ne 0 \colon \mathscr{A^*}\vec{w} = \vec{0}
+    \end{gather*}
+\end{proof}

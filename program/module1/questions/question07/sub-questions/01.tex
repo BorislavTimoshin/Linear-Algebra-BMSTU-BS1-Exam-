@@ -1,0 +1,71 @@
+\subsection{
+    Представление $k$-мерного линейного аффинного многообразия.
+}
+
+Пусть даны $\mathcal{V}$ - линейное пространство над $\PP$, $\mathcal{W}$ - его подпространство, $\vec{a} \in \mathcal{V}$ - некоторый вектор.
+
+\begin{definition}
+    \textbf{\textit{Аффинной линейной комбинацией}} произвольных $s$ векторов $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_s \in \mathcal{V}$ называется вектор
+
+    $$\lambda_0\vec{a} + \lambda_1\vec{b}_1 + \lambda_2\vec{b}_2 +  \ldots + \lambda_s\vec{b}_s,$$
+
+    где числа $\lambda_i$ удовлетворяют соотношению $\lambda_0 + \lambda_1 + \ldots + \lambda_s = 1$.
+\end{definition}
+
+\begin{definition}
+    \textbf{\textit{Аффинной оболочкой заданных векторов $\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_s \in \mathcal{V}$}} называется множество всех их аффинных линейных комбинаций.
+\end{definition}
+
+\begin{designation}
+    $\Aff(\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_s)$.
+\end{designation}
+
+\begin{theorem}
+    Всякое $k$-мерное ЛАМ $(\vec{a} + \mathcal{W})$ линейного пространства $\mathcal{V}$ может быть представлено как аффинная линейная оболочка $\leq k$ векторов.
+\end{theorem}
+
+\begin{proof}~
+
+    \begin{gather*}
+        (\vec{a} + \mathcal{W})\text{ - это $k$-мерное ЛАМ.} \\
+        \downimplies \\
+        \dim \mathcal{W} = k. \\
+        \downimplies \\
+        \text{Можно зафиксировать базис }\mathcal{W}\text{ - векторы }\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_k. \\
+        \text{Тогда рассмотрим векторы: } \\
+        \vec{v}_1 = \vec{a} + \vec{e}_1 \\
+        \vec{v}_2 = \vec{a} + \vec{e}_2 \\
+        \vdots \\
+        \vec{v}_k = \vec{a} + \vec{e}_k. \\
+        \text{И докажем, что } \vec{a} + \mathcal{W} = \Aff(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k).
+    \end{gather*}
+
+    \begin{enumerate}
+        \item[$\subseteq$] Возьмем любой $\vec{a} + \vec{w} \in \vec{a} + \mathcal{W}$.
+
+        Тогда 
+
+        \begin{align*}
+            \vec{a} + \vec{w} &= \vec{a} + \lambda_1\vec{e}_1 + \ldots + \lambda_k\vec{e}_k = \\
+            &= \vec{a} + \lambda_1(\vec{v}_1 - \vec{a}) + \ldots + \lambda_k(\vec{v}_k - \vec{a}) = \\
+            &= \vec{a} + \lambda_1\vec{v}_1 - \lambda_1\vec{a} + \ldots + \lambda_k\vec{v}_k - \lambda_k\vec{a} = \\
+            &= (\underbrace{1 - \lambda_1 - \lambda_2 - \ldots - \lambda_k}_{\lambda_0})\vec{a} + \lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k = \\
+            &= \lambda_0\vec{a} + \lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k,
+        \end{align*}
+        при этом $\lambda_0 + \lambda_1 + \ldots + \lambda_k = 1$.
+        
+        Значит, $\vec{a} + \vec{w} \in \Aff(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k)$.
+        
+        \item[$\supseteq$] Рассмотрим любой $\vec{x} \in \Aff(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k)$.
+
+        Тогда $\vec{x} = \lambda_0\vec{a} + \lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k$, где $\lambda_0 + \lambda_1 + \ldots + \lambda_k = 1$. Выразим $\lambda_0 = 1 - \lambda_1 - \lambda_2 - \ldots - \lambda_k$.
+
+        Тогда
+
+        \begin{align*}
+            \vec{x} &= (1 - \lambda_1 - \lambda_2 - \ldots - \lambda_k)\vec{a} + \lambda_1\vec{v}_1 + \ldots + \lambda_k\vec{v}_k = \\
+            &= \vec{a} + \lambda_1(\vec{v}_1 - \vec{a}) + \ldots + \lambda_k(\vec{v}_k - \vec{a}) = \\
+            &= \vec{a} + \underbrace{\lambda_1\vec{e}_1 + \ldots + \lambda_k\vec{e}_k}_{\in \mathcal{W}} \in \vec{a} + \mathcal{W}.
+        \end{align*}
+    \end{enumerate}
+\end{proof}

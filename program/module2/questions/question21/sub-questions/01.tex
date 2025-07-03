@@ -1,0 +1,34 @@
+\subsection{
+    Линейный оператор, определение, три примера.
+}
+
+\begin{definition}
+    Пусть $\mathcal{V}, \mathcal{W}$ - 
+    линейные пространства над полем $\PP$, 
+    $\dim \mathcal{V} = n, \dim \mathcal{W} = m$. 
+    Отображение $\mathscr{A} \colon \mathcal{V} 
+    \to \mathcal{W}$ называется 
+    \textit{\textbf{линейным оператором}}, 
+    если $\forall \vec{x}, \vec{y} \in 
+    \mathcal{V}$ и $\forall \lambda \in \PP$ 
+    выполнены следующие условия:
+    
+    \begin{enumerate}[nosep]
+        \item $\mathscr{A}(\vec{x} + \vec{y}) = 
+        \mathscr{A}(\vec{x}) + \mathscr{A}(\vec{y}),$
+        \item $\mathscr{A}(\alpha\vec{x}) = 
+        \alpha\mathscr{A}(\vec{x})$,
+    \end{enumerate}
+    где $\vec{x}$ - прообраз $\vec{y} = \mathscr{A}\vec{x}$,
+    $\vec{y} = \mathscr{A}\vec{x}$ - образ $\vec{x}$.
+\end{definition}
+
+\begin{example}~
+
+    \begin{enumerate}[nosep]
+        \item Нулевой: $\zeroperator\vec{x} = \vec{0}$.
+        \item Тождественный/единичный: 
+        $\identityoperator\vec{x} = \vec{x}$.
+        \item Оператор дифференцирования $\mathscr{D} \colon P_n(x) \to P_n(x)$, действующий по правилу $\mathscr{D}f = f'$.
+    \end{enumerate}
+\end{example}
