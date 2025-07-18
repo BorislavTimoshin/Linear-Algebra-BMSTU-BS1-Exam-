@@ -1,31 +1,37 @@
 name: Build and Commit PDF
 
+# Запускаем при пуше только если изменился main.tex,
+# и даём себе возможность запускать вручную
 on:
   push:
     paths:
-      - 'main.tex'          
-  workflow_dispatch:       
+      - 'main.tex'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    # 1) Клонируем репозиторий
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        persist-credentials: false
+        persist-credentials: false    # чтобы не подхватывался токен от Checkout
 
+    # 2) Ставим TeX и собираем PDF
     - name: Set up LaTeX and compile
       uses: dante-ev/latex-action@latest
       with:
         root_file: main.tex
 
+    # 3) Переносим сгенерированный main.pdf в папку pdf/
     - name: Move PDF to /pdf/
       run: |
         mkdir -p pdf
         mv main.pdf pdf/main.pdf
 
+    # 4) Настраиваем SSH для пуша
     - name: Set up SSH
       run: |
         mkdir -p ~/.ssh
@@ -33,10 +39,11 @@ jobs:
         chmod 600 ~/.ssh/id_ed25519
         ssh-keyscan github.com >> ~/.ssh/known_hosts
 
+    # 5) Коммитим и пушим обратно в ту же ветку (main или master)
     - name: Commit and push PDF
       run: |
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add pdf/main.pdf
-        git commit -m "Автоматическая пересборка PDF" || echo "No changes"
+        git commit -m "Автоматическая пересборка PDF" || echo "No changes to commit"
         git push git@github.com:${{ github.repository }}.git HEAD:${{ github.ref_name }}
