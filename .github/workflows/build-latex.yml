@@ -3,25 +3,25 @@ name: Build and Commit PDF
 on:
   push:
     paths:
-      - 'main.tex'  # срабатывает только при изменении main.tex
-  workflow_dispatch:
+      - 'main.tex'          
+  workflow_dispatch:       
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
+    - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        persist-credentials: false  # мы используем ssh-ключ, а не токен
+        persist-credentials: false
 
-    - name: Set up LaTeX
+    - name: Set up LaTeX and compile
       uses: dante-ev/latex-action@latest
       with:
         root_file: main.tex
 
-    - name: Move PDF to pdf/
+    - name: Move PDF to /pdf/
       run: |
         mkdir -p pdf
         mv main.pdf pdf/main.pdf
@@ -38,5 +38,5 @@ jobs:
         git config user.name "GitHub Actions"
         git config user.email "actions@github.com"
         git add pdf/main.pdf
-        git commit -m "Автоматическая пересборка PDF" || echo "No changes to commit"
-        git push git@github.com:${{ github.repository }}.git HEAD:main
+        git commit -m "Автоматическая пересборка PDF" || echo "No changes"
+        git push git@github.com:${{ github.repository }}.git HEAD:${{ github.ref_name }}
