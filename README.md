@@ -1,1 +1,1 @@
-📄 [Скачать PDF-версию статьи](./pdf/main.pdf)
+📄 [Скачать PDF-версию статьи](./pdf/linear-algebra-exam.pdf)
