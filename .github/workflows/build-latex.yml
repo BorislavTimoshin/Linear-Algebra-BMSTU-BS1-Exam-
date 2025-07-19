@@ -25,11 +25,11 @@ jobs:
       with:
         root_file: main.tex
 
-    # 3) Переносим сгенерированный main.pdf в папку pdf/
+    # 3) Переносим сгенерированный linear-algebra-exam.pdf в папку pdf/
     - name: Move PDF to /pdf/
       run: |
         mkdir -p pdf
-        mv main.pdf pdf/linear-algebra-exam.pdf
+        mv linear-algebra-exam.pdf pdf/linear-algebra-exam.pdf
 
     # 4) Настраиваем SSH для пуша
     - name: Set up SSH
