@@ -4,4 +4,4 @@
 
 При нахождении опечатки можно создать [issue](https://docs.github.com/en/enterprise/2.15/user/articles/creating-an-issue)
 
-📄 Скачать PDF-версию статьи можно [здесь](./pdf/linear-algebra-exam.pdf)
+Скачать PDF-версию статьи можно [здесь](./pdf/linear-algebra-exam.pdf)
